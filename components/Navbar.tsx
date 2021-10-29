@@ -10,11 +10,15 @@ export function Navbar() {
   return (
     <>
       <Flex
+        position="fixed"
+        top="0"
+        width="100%"
         bg="brown"
         height="56px"
         justifyContent="space-between"
         alignItems="center"
         px={4}
+        zIndex="banner"
       >
         <Image
           src="/juguetron-logo.svg"
