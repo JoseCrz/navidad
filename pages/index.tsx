@@ -1,6 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Box, Center, Text, Heading, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Center,
+  Text,
+  Heading,
+  VStack,
+  Button,
+} from "@chakra-ui/react";
 
 import { Section } from "components/Section";
 import { Navbar } from "components/Navbar";
@@ -85,6 +93,51 @@ export default function Home() {
         </Section>
         <Section bg="darkgray">
           <Heading fontSize="50px">Conoce a nuestros personajes</Heading>
+          <Flex flexDirection="column" mt={9} mx={-8}>
+            {[1, 2, 3].map((_, index) => (
+              <Flex
+                mt={index > 0 ? "-5" : "0"}
+                key={index}
+                bg={`gray.${index + 2}00`}
+                borderRadius="2xl"
+                p={8}
+                width="100%"
+                justifyContent="space-between"
+                boxShadow="sm"
+              >
+                <Box maxWidth="48%">
+                  <Image
+                    src="/esferin.jpg"
+                    alt="Esferin"
+                    width="165px"
+                    height="188px"
+                  />
+                </Box>
+                <Box maxWidth="48%">
+                  <Heading as="h3" color="gray" size="xl" fontFamily="body">
+                    Esferin
+                  </Heading>
+                  <Text fontSize="xs" lineHeight="short">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Maecenas ex felis, vehicula vitae gravida in, tempus nec
+                    orci.
+                  </Text>
+                  <Button
+                    bg="darkgray"
+                    color="white"
+                    textTransform="uppercase"
+                    letterSpacing="wider"
+                    boxShadow="sm"
+                    mt={3}
+                    py={2}
+                    px={4}
+                  >
+                    Enabled
+                  </Button>
+                </Box>
+              </Flex>
+            ))}
+          </Flex>
         </Section>
       </main>
     </>
