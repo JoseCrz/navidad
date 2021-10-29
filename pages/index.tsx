@@ -1,15 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
 import {
-  Container,
   Box,
   Flex,
   Center,
   Button,
   Text,
   Heading,
+  VStack,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+
+import { Section } from "components/Section";
 
 export default function Home() {
   return (
@@ -40,7 +42,7 @@ export default function Home() {
         </Button>
       </Flex>
       <main>
-        <Container bg="darkgray" px={8}>
+        <Section bg="darkgray">
           <Center pt={16}>
             <Image
               src="/el-secreto-logo.svg"
@@ -50,7 +52,7 @@ export default function Home() {
             />
           </Center>
           <Box mt="114px">
-            <Heading as="h1" fontSize="50px" maxWidth="330px">
+            <Heading as="h2" fontSize="50px" maxWidth="330px">
               Que gusto verte de vuelta un año más
             </Heading>
             <Text fontWeight="700" mt={4}>
@@ -59,7 +61,55 @@ export default function Home() {
               convallis ornare.
             </Text>
           </Box>
-        </Container>
+        </Section>
+        <Section bg="lightgray">
+          <Heading fontSize="50px">
+            Recordemos lo que hicimos el año anterior
+          </Heading>
+          <Box
+            mt={6}
+            bg="white"
+            borderRadius="20px"
+            py={10}
+            boxShadow="0 3px 6px 0 rgba(0, 0, 0, 0.16)"
+          >
+            <VStack spacing={6}>
+              <Box textAlign="center">
+                <Text fontWeight="700" fontSize="32px">
+                  100
+                </Text>
+                <Text>Premios Repartidos</Text>
+              </Box>
+              <Box textAlign="center">
+                <Text fontWeight="700" fontSize="32px">
+                  100
+                </Text>
+                <Text>Premios Repartidos</Text>
+              </Box>
+              <Box textAlign="center">
+                <Text fontWeight="700" fontSize="32px">
+                  100
+                </Text>
+                <Text>Premios Repartidos</Text>
+              </Box>
+              <Box textAlign="center">
+                <Text fontWeight="700" fontSize="32px">
+                  100
+                </Text>
+                <Text>Premios Repartidos</Text>
+              </Box>
+              <Box textAlign="center">
+                <Text fontWeight="700" fontSize="32px">
+                  100
+                </Text>
+                <Text>Premios Repartidos</Text>
+              </Box>
+            </VStack>
+          </Box>
+        </Section>
+        <Section bg="darkgray">
+          <Heading fontSize="50px">Conoce a nuestros personajes</Heading>
+        </Section>
       </main>
     </>
   );
