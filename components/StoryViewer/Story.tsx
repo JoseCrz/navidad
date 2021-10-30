@@ -5,15 +5,14 @@ import type { Story } from "types";
 
 type StoryViewerProps = {
   stories: Story[];
+  onStoriesCompleted: () => void;
 };
 
-export function StoryViewer({ stories }: StoryViewerProps) {
+export function StoryViewer({ stories, onStoriesCompleted }: StoryViewerProps) {
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
-  // console.log("currentStoryIndex", currentStoryIndex);
 
   const currentStory = stories[currentStoryIndex];
   const [currentStoryProgress, setCurrentStoryProgress] = useState(0);
-  // console.log(" currentStoryProgress", currentStoryProgress);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,15 +24,24 @@ export function StoryViewer({ stories }: StoryViewerProps) {
 
   useEffect(() => {
     if (currentStoryProgress === 100) {
-      setCurrentStoryIndex((prevIndex) => {
-        if (prevIndex === stories.length - 1) return 0;
+      if (currentStoryIndex + 1 == stories.length) {
+        onStoriesCompleted();
+      } else {
+        setCurrentStoryIndex((prevIndex) => {
+          if (prevIndex === stories.length - 1) return 0;
 
-        return prevIndex + 1;
-      });
+          return prevIndex + 1;
+        });
 
-      setCurrentStoryProgress(0);
+        setCurrentStoryProgress(0);
+      }
     }
-  }, [currentStoryProgress, stories.length]);
+  }, [
+    currentStoryProgress,
+    stories.length,
+    currentStoryIndex,
+    onStoriesCompleted,
+  ]);
 
   return (
     <Box

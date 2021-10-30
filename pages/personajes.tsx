@@ -34,6 +34,12 @@ export default function Personajes() {
           <StoryViewer
             key={selectedProfile.name}
             stories={selectedProfile.stories}
+            onStoriesCompleted={() =>
+              setSelecterProfileIndex((prev) => {
+                if (prev + 1 === profiles.length) return 0;
+                return prev + 1;
+              })
+            }
           />
         </Box>
       </Box>
