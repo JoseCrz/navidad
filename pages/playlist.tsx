@@ -1,10 +1,40 @@
+import Image from "next/image";
 import { Box, Text, Heading } from "@chakra-ui/react";
 import { Layout } from "components/Layout";
 import { Section } from "components/Section";
+import { Carousel } from "components/Carousel";
 
 export default function Playlist() {
   return (
     <Layout bg="black">
+      <Box height="253px" maxWidth="375px">
+        <Carousel>
+          <Image
+            src="/playlist-photos/phoenix-1.jpeg"
+            width="375px"
+            height="253px"
+            alt="phoenix playing"
+          />
+          <Image
+            src="/playlist-photos/phoenix-2.jpeg"
+            width="375px"
+            height="253px"
+            alt="phoenix playing"
+          />
+          <Image
+            src="/playlist-photos/phoenix-3.jpeg"
+            width="375px"
+            height="253px"
+            alt="phoenix playing"
+          />
+          <Image
+            src="/playlist-photos/phoenix-4.jpeg"
+            width="375px"
+            height="253px"
+            alt="phoenix playing"
+          />
+        </Carousel>
+      </Box>
       <Section>
         <Heading color="white" size="md">
           Playlist
