@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Flex, Text, Heading, Container } from "@chakra-ui/react";
+import { Box, Flex, Grid, Text, Heading, Container } from "@chakra-ui/react";
 import { times } from "utils";
 import type { Story } from "types";
 
@@ -17,7 +17,7 @@ export function StoryViewer({ stories, onStoriesCompleted }: StoryViewerProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentStoryProgress((prev) => prev + 1);
-    }, 36);
+    }, 150); // change time interval as needed -> 15000 / seconds total you wish each story to last
 
     return () => clearInterval(interval);
   }, []);
@@ -88,7 +88,7 @@ function StorySteps({
   currentStoryIndex,
 }: StoryStepsProps) {
   return (
-    <Flex my={6}>
+    <Grid templateColumns={`repeat(${totalSteps}, 1fr)`} gap={3} my={6}>
       {times(totalSteps, (index: number) => {
         const progress =
           index === currentStoryIndex
@@ -97,34 +97,19 @@ function StorySteps({
             ? 100
             : 0;
 
-        return (
-          <Step
-            key={`step-${index}`}
-            totalSteps={totalSteps}
-            stepNumber={index}
-            progress={progress}
-          />
-        );
+        return <Step key={`step-${index}`} progress={progress} />;
       })}
-    </Flex>
+    </Grid>
   );
 }
 
 type StepProps = {
-  totalSteps: number;
-  stepNumber: number;
   progress: number;
 };
 
-function Step({ totalSteps, stepNumber, progress }: StepProps) {
-  const currentStep = stepNumber + 1;
+function Step({ progress }: StepProps) {
   return (
-    <Box
-      height="4px"
-      width="77px"
-      bg="blackAlpha.600"
-      mr={currentStep === totalSteps ? 0 : 3}
-    >
+    <Box height="4px" width="100%" bg="blackAlpha.600">
       <Box
         bg="white"
         height="inherit"

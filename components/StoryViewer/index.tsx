@@ -1,1 +1,1 @@
-export { StoryViewer } from "./Story";
+export { StoryViewer } from "./StoryViewer";
