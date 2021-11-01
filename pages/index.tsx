@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <Layout>
       <Section bg="darkgray">
-        <Center pt={16}>
+        <Center>
           <Image
             src="/el-secreto-logo.svg"
             alt="El Secreto de la Navidad Logo"

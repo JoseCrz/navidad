@@ -13,7 +13,7 @@ export default function Personajes() {
   const selectedProfile = profiles[selectedProfileIndex];
 
   return (
-    <Layout height="100vh" pt="56px">
+    <Layout height="100vh">
       <ProfileSelector
         profiles={profiles}
         selectedIndex={selectedProfileIndex}

@@ -15,7 +15,7 @@ export function Layout(props: BoxProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Box as="main" {...props} />
+      <Box as="main" pt="56px" {...props} />
     </>
   );
 }
