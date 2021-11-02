@@ -35,7 +35,7 @@ export default function Playlist() {
           />
         </Carousel>
       </Box>
-      <Section>
+      <Section mt="-20" position="relative">
         <Heading color="white" size="md">
           Playlist
         </Heading>
