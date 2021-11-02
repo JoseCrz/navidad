@@ -31,6 +31,7 @@ export function Carousel({ children }: { children: React.ReactNode }) {
         bottom={0}
         width="100%"
         height="100%"
+        bgGradient="linear(to-b, transparent 65%, black)"
       >
         <Box position="absolute" left={0} top="calc(50% - 40px)">
           <Button
