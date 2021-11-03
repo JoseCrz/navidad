@@ -1,9 +1,13 @@
 import type { Profile } from "types";
 
+import esferinImage from "public/esferin.jpg";
+import arbolinImage from "public/arbolin.jpg";
+import estrellinImage from "public/estrellin.jpg";
+
 export const profiles: Profile[] = [
   {
     name: "Esferin",
-    avatar: "/esferin-profile.jpg",
+    avatar: esferinImage,
     stories: [
       {
         pictureUrl: "/story-photos/story-1.jpg",
@@ -33,7 +37,7 @@ export const profiles: Profile[] = [
   },
   {
     name: "Arbolin",
-    avatar: "/esferin-profile.jpg",
+    avatar: arbolinImage,
     stories: [
       {
         pictureUrl: "/story-photos/story-5.jpg",
@@ -57,7 +61,7 @@ export const profiles: Profile[] = [
   },
   {
     name: "Estrellin",
-    avatar: "/esferin-profile.jpg",
+    avatar: estrellinImage,
     stories: [
       {
         pictureUrl: "/story-photos/story-1.jpg",

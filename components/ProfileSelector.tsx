@@ -33,14 +33,19 @@ export function ProfileSelector({
               onClick={() => onSelectProfile(profileIndex)}
             >
               <Circle
-                border={isSelected ? "2px solid brown" : "2px solid gray"}
+                border={isSelected ? "3px solid brown" : "3px solid gray"}
                 overflow="hidden"
+                position="relative"
+                size="66px"
               >
                 <Image
+                  priority
                   src={profile.avatar}
-                  alt="Imagen de Perfil de Esferin"
-                  width="66px"
-                  height="66px"
+                  alt={`Imagen de Perfil de ${profile.name}`}
+                  layout="fill"
+                  objectFit="cover"
+                  sizes="50vw"
+                  placeholder="blur"
                 />
               </Circle>
               <Text>{profile.name}</Text>

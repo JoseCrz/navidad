@@ -13,6 +13,8 @@ import type { BoxProps } from "@chakra-ui/react";
 import { Layout } from "components/Layout";
 import logo from "public/el-secreto-logo.svg";
 
+import { profiles } from "data/profiles";
+
 export default function Home() {
   return (
     <Layout>
@@ -108,11 +110,11 @@ export default function Home() {
             mt={[9, 9, 9, 60]}
             mx={[-8, -8, -8, 0]}
           >
-            {[1, 2, 3].map((_, index) => (
+            {profiles.map((profile, index) => (
               <Box
                 display={["flex", "flex", "flex", "block"]}
                 mt={[index > 0 ? "-5" : "0", index > 0 ? "-9" : "0", null, 0]}
-                key={index}
+                key={profile.name}
                 bg={`gray.${index + 2}00`}
                 borderRadius="2xl"
                 p={8}
@@ -123,12 +125,18 @@ export default function Home() {
               >
                 <Box width={["48%", "48%", "48%", "100%"]} mt={[0, 0, 0, -32]}>
                   <AspectRatio ratio={165 / 188} width="100%" height="auto">
-                    <Image src="/esferin.jpg" alt="Esferin" layout="fill" />
+                    <Image
+                      src={profile.avatar}
+                      alt="Esferin"
+                      layout="fill"
+                      objectFit="cover"
+                      placeholder="blur"
+                    />
                   </AspectRatio>
                 </Box>
                 <Box mt={[0, 0, 0, 8]} maxWidth={["48%", "48%", "48%", "100%"]}>
                   <Heading as="h3" color="gray" size="xl" fontFamily="body">
-                    Esferin
+                    {profile.name}
                   </Heading>
                   <Text fontSize="xs" lineHeight="short">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.

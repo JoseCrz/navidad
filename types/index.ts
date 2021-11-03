@@ -6,6 +6,6 @@ export type Story = {
 
 export type Profile = {
   name: string;
-  avatar: string;
+  avatar: StaticImageData;
   stories: Story[];
 };

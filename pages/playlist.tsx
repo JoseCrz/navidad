@@ -1,7 +1,14 @@
 import Image from "next/image";
+import type { ImageProps } from "next/image";
 import { Box, Flex, Text, Heading, AspectRatio } from "@chakra-ui/react";
 import { Layout } from "components/Layout";
 import { Carousel } from "components/Carousel";
+
+//Images
+import phoenixImage1 from "public/playlist-photos/phoenix-1.jpeg";
+import phoenixImage2 from "public/playlist-photos/phoenix-2.jpeg";
+import phoenixImage3 from "public/playlist-photos/phoenix-3.jpeg";
+import phoenixImage4 from "public/playlist-photos/phoenix-4.jpeg";
 
 export default function Playlist() {
   return (
@@ -12,10 +19,10 @@ export default function Playlist() {
         position="relative"
       >
         <Carousel>
-          <CarouselImage src="/playlist-photos/phoenix-1.jpeg" />
-          <CarouselImage src="/playlist-photos/phoenix-2.jpeg" />
-          <CarouselImage src="/playlist-photos/phoenix-3.jpeg" />
-          <CarouselImage src="/playlist-photos/phoenix-4.jpeg" />
+          <CarouselImage priority src={phoenixImage1} />
+          <CarouselImage src={phoenixImage2} />
+          <CarouselImage src={phoenixImage3} />
+          <CarouselImage src={phoenixImage4} />
         </Carousel>
       </Box>
 
@@ -99,14 +106,20 @@ export default function Playlist() {
   );
 }
 
-function CarouselImage({ src }: { src: string }) {
+function CarouselImage(props: ImageProps) {
   return (
     <AspectRatio
       ratio={[375 / 253, 768 / 253]}
       maxWidth="100%"
       maxHeight="253px"
     >
-      <Image src={src} alt="phoenix playing" layout="fill" objectFit="cover" />
+      <Image
+        alt="phoenix playing"
+        layout="fill"
+        objectFit="cover"
+        placeholder="blur"
+        {...props}
+      />
     </AspectRatio>
   );
 }
