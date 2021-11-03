@@ -13,25 +13,27 @@ export default function Personajes() {
   const selectedProfile = profiles[selectedProfileIndex];
 
   return (
-    <Layout height="100vh">
-      <ProfileSelector
-        profiles={profiles}
-        selectedIndex={selectedProfileIndex}
-        onSelectProfile={(selectedIndex) =>
-          setSelecterProfileIndex(selectedIndex)
-        }
-      />
-      <Box height="calc(100vh - 172px)">
-        <StoryViewer
-          key={selectedProfile.name}
-          stories={selectedProfile.stories}
-          onStoriesCompleted={() =>
-            setSelecterProfileIndex((prev) => {
-              if (prev + 1 === profiles.length) return 0;
-              return prev + 1;
-            })
+    <Layout height="100vh" bg="blackAlpha.800">
+      <Box maxWidth="487px" mx="auto">
+        <ProfileSelector
+          profiles={profiles}
+          selectedIndex={selectedProfileIndex}
+          onSelectProfile={(selectedIndex) =>
+            setSelecterProfileIndex(selectedIndex)
           }
         />
+        <Box height="calc(100vh - 172px)">
+          <StoryViewer
+            key={selectedProfile.name}
+            stories={selectedProfile.stories}
+            onStoriesCompleted={() =>
+              setSelecterProfileIndex((prev) => {
+                if (prev + 1 === profiles.length) return 0;
+                return prev + 1;
+              })
+            }
+          />
+        </Box>
       </Box>
     </Layout>
   );

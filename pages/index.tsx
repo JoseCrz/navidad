@@ -2,7 +2,7 @@ import Image from "next/image";
 import {
   Box,
   Flex,
-  Center,
+  AspectRatio,
   Text,
   Heading,
   VStack,
@@ -11,21 +11,27 @@ import {
 
 import { Layout } from "components/Layout";
 import { Section } from "components/Section";
+import logo from "public/el-secreto-logo.svg";
 
 export default function Home() {
   return (
     <Layout>
-      <Section bg="darkgray">
-        <Center>
+      <Section
+        bg="darkgray"
+        height={["auto", "100vh"]}
+        display={["block", "flex"]}
+        alignItems={["unset", "center"]}
+      >
+        <AspectRatio ratio={300 / 259} width="100%" height="auto">
           <Image
-            src="/el-secreto-logo.svg"
+            priority
+            src={logo}
             alt="El Secreto de la Navidad Logo"
-            width="300px"
-            height="259px"
+            layout="fill"
           />
-        </Center>
+        </AspectRatio>
         <Box mt="114px">
-          <Heading as="h2" fontSize="50px" maxWidth="330px">
+          <Heading as="h2" fontSize="50px" maxWidth={["330px", "100%"]}>
             Que gusto verte de vuelta un año más
           </Heading>
           <Text fontWeight="700" mt={4}>
@@ -35,7 +41,12 @@ export default function Home() {
           </Text>
         </Box>
       </Section>
-      <Section bg="lightgray">
+      <Section
+        bg="lightgray"
+        height={["auto", "100vh"]}
+        display={["block", "flex"]}
+        alignItems={["unset", "center"]}
+      >
         <Heading fontSize="50px">
           Recordemos lo que hicimos el año anterior
         </Heading>
@@ -80,7 +91,12 @@ export default function Home() {
           </VStack>
         </Box>
       </Section>
-      <Section bg="darkgray">
+      <Section
+        bg="darkgray"
+        height={["auto", "100vh"]}
+        display={["block", "flex"]}
+        alignItems={["unset", "center"]}
+      >
         <Heading fontSize="50px">Conoce a nuestros personajes</Heading>
         <Flex flexDirection="column" mt={9} mx={-8}>
           {[1, 2, 3].map((_, index) => (
