@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Flex, Button } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
@@ -21,14 +20,12 @@ export function Navbar() {
         px={4}
         zIndex="banner"
       >
-        <Link href="/" passHref>
-          <Image
-            src="/juguetron-logo.svg"
-            alt="Juguetron logo"
-            width="126.602px"
-            height="24.618"
-          />
-        </Link>
+        <Image
+          src="/juguetron-logo.svg"
+          alt="Juguetron logo"
+          width="126.602px"
+          height="24.618"
+        />
         <Button bg="transparent" padding={0}>
           <HamburgerIcon
             color="white"
