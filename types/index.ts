@@ -1,7 +1,8 @@
 export type Story = {
-  pictureUrl: string;
+  picture: StaticImageData;
   title: string;
   description: string;
+  alt: string;
 };
 
 export type Profile = {
