@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Box, Flex, Grid, Text, Heading, Container } from "@chakra-ui/react";
 import { times } from "utils";
 import type { Story } from "types";
@@ -11,19 +12,19 @@ type StoryViewerProps = {
 export function StoryViewer({ stories, onStoriesCompleted }: StoryViewerProps) {
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
 
-  const currentStory = stories[currentStoryIndex];
-  const [currentStoryProgress, setCurrentStoryProgress] = useState(0);
+  const story = stories[currentStoryIndex];
+  const [storyProgress, setStoryProgress] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentStoryProgress((prev) => prev + 1);
+      setStoryProgress((prev) => prev + 1);
     }, 150); // change time interval as needed -> 15000 / seconds total you wish each story to last
 
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    if (currentStoryProgress === 100) {
+    if (storyProgress === 100) {
       if (currentStoryIndex + 1 == stories.length) {
         onStoriesCompleted();
       } else {
@@ -33,32 +34,27 @@ export function StoryViewer({ stories, onStoriesCompleted }: StoryViewerProps) {
           return prevIndex + 1;
         });
 
-        setCurrentStoryProgress(0);
+        setStoryProgress(0);
       }
     }
-  }, [
-    currentStoryProgress,
-    stories.length,
-    currentStoryIndex,
-    onStoriesCompleted,
-  ]);
+  }, [storyProgress, stories.length, currentStoryIndex, onStoriesCompleted]);
 
   return (
-    <Box
-      width="100%"
-      height="100%"
-      position="relative"
-      sx={{
-        background: `url("${currentStory.pictureUrl}")`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
-    >
+    <Box width="100%" height="100%" position="relative">
+      <Image
+        priority
+        key={story.title}
+        src={story.picture}
+        alt={story.alt}
+        layout="fill"
+        objectFit="cover"
+        placeholder="blur"
+      />
       <StoryOverlay>
         <StoryHeader>
           <StorySteps
             totalSteps={stories.length}
-            currentStoryProgress={currentStoryProgress}
+            currentStoryProgress={storyProgress}
             currentStoryIndex={currentStoryIndex}
           />
           <Heading
@@ -67,10 +63,10 @@ export function StoryViewer({ stories, onStoriesCompleted }: StoryViewerProps) {
             color="whiteAlpha.800"
             letterSpacing="widest"
           >
-            {currentStory.title}
+            {story.title}
           </Heading>
         </StoryHeader>
-        <StoryDescription description={currentStory.description} />
+        <StoryDescription description={story.description} />
       </StoryOverlay>
     </Box>
   );
@@ -109,7 +105,7 @@ type StepProps = {
 
 function Step({ progress }: StepProps) {
   return (
-    <Box height="4px" width="100%" bg="blackAlpha.600">
+    <Box height="4px" width="100%" bg="whiteAlpha.600">
       <Box
         bg="white"
         height="inherit"
