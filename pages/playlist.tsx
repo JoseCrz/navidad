@@ -4,6 +4,8 @@ import { Box, Flex, Text, Heading, AspectRatio } from "@chakra-ui/react";
 import { Layout } from "components/Layout";
 import { Carousel } from "components/Carousel";
 
+import { Iframe } from "components/Iframe";
+
 //Images
 import phoenixImage1 from "public/playlist-photos/phoenix-1.jpeg";
 import phoenixImage2 from "public/playlist-photos/phoenix-2.jpeg";
@@ -52,13 +54,7 @@ export default function Playlist() {
             borderRadius="xl"
             height={["380px", "642px"]}
           >
-            <iframe
-              src="https://open.spotify.com/embed/playlist/37i9dQZF1DXauSRu0mFos4?theme=0"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              allow="encrypted-media"
-            />
+            <Iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXauSRu0mFos4?theme=0" />
           </Box>
         </Box>
         <Box py={[12, 0]}>
@@ -74,30 +70,21 @@ export default function Playlist() {
             scelerisque diam venenatis vel.
           </Text>
           <Box mt={9} overflow="hidden" borderRadius="xl">
-            <iframe
+            <Iframe
               src="https://open.spotify.com/embed/track/4pi6QNR8vL1IesR8R7UU4l?theme=0"
-              width="100%"
               height="80"
-              frameBorder="0"
-              allow="encrypted-media"
             />
           </Box>
           <Box mt={3} overflow="hidden" borderRadius="xl">
-            <iframe
+            <Iframe
               src="https://open.spotify.com/embed/track/6tXfYX7BHCaafCy4so09gf?theme=0"
-              width="100%"
               height="80"
-              frameBorder="0"
-              allow="encrypted-media"
             />
           </Box>
           <Box mt={3} overflow="hidden" borderRadius="xl">
-            <iframe
+            <Iframe
               src="https://open.spotify.com/embed/track/4tZwZVNhVCeBQYQtgQN5vW?theme=0"
-              width="100%"
               height="80"
-              frameBorder="0"
-              allow="encrypted-media"
             />
           </Box>
         </Box>
