@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Box, Flex, Grid, Text, Heading, Container } from "@chakra-ui/react";
 import { times } from "utils";
@@ -7,25 +6,34 @@ import type { Story } from "types";
 type StoryViewerProps = {
   story: Story;
   totalStories: number;
-  onStoryCompleted: () => void;
-  onStoriesCompleted: () => void;
+  currentStoryIndex: number;
+  storyProgress: number;
+
+  onRequestNextStory: () => void;
+  onRequestPrevStory: () => void;
 };
 
 export function StoryViewer({
   story,
   totalStories,
-  onStoryCompleted,
-  onStoriesCompleted,
+  currentStoryIndex,
+  storyProgress,
+  onRequestNextStory,
+  onRequestPrevStory,
 }: StoryViewerProps) {
   return (
     <Box width="100%" height="100%" position="relative">
       <StoryView
+        key={story.title}
         story={story}
         totalStories={totalStories}
-        onStoryCompleted={onStoryCompleted}
-        onStoriesCompleted={onStoriesCompleted}
+        currentStoryIndex={currentStoryIndex}
+        storyProgress={storyProgress}
       />
-      <StoryControls />
+      <StoryControls
+        onRequestNextStory={onRequestNextStory}
+        onRequestPrevStory={onRequestPrevStory}
+      />
     </Box>
   );
 }
@@ -33,21 +41,20 @@ export function StoryViewer({
 type StoryViewProps = {
   story: Story;
   totalStories: number;
-  onStoryCompleted: () => void;
-  onStoriesCompleted: () => void;
+  currentStoryIndex: number;
+  storyProgress: number;
 };
 
 function StoryView({
   story,
   totalStories,
-  onStoryCompleted,
-  onStoriesCompleted,
+  currentStoryIndex,
+  storyProgress,
 }: StoryViewProps) {
   return (
     <>
       <Image
         priority
-        key={story.title}
         src={story.picture}
         alt={story.alt}
         layout="fill"
@@ -59,8 +66,8 @@ function StoryView({
           <StoryHeader>
             <StorySteps
               totalStories={totalStories}
-              onStoryCompleted={onStoryCompleted}
-              onStoriesCompleted={onStoriesCompleted}
+              currentStoryIndex={currentStoryIndex}
+              storyProgress={storyProgress}
             />
             <Heading
               as="h3"
@@ -78,61 +85,34 @@ function StoryView({
   );
 }
 
-function StoryControls() {
+type StoryControlProps = {
+  onRequestNextStory: () => void;
+  onRequestPrevStory: () => void;
+};
+
+function StoryControls({
+  onRequestNextStory,
+  onRequestPrevStory,
+}: StoryControlProps) {
   return (
     <Flex position="absolute" width="100%" height="100%">
-      <Box height="100%" width="50%" bg="#ff000038" />
-      <Box height="100%" width="50%" bg="#0000ff30" />
+      <Box height="100%" width="50%" onClick={onRequestPrevStory} />
+      <Box height="100%" width="50%" onClick={onRequestNextStory} />
     </Flex>
   );
 }
 
 type StoryStepsProps = {
   totalStories: number;
-  onStoryCompleted: () => void;
-  onStoriesCompleted: () => void;
+  currentStoryIndex: number;
+  storyProgress: number;
 };
 
 function StorySteps({
   totalStories,
-  onStoryCompleted,
-  onStoriesCompleted,
+  currentStoryIndex,
+  storyProgress,
 }: StoryStepsProps) {
-  const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
-
-  const [storyProgress, setStoryProgress] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStoryProgress((prev) => prev + 1);
-    }, 36); // change time interval as needed -> 15000 / seconds total you wish each story to last
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (storyProgress === 100) {
-      if (currentStoryIndex + 1 === totalStories) {
-        onStoriesCompleted();
-      } else {
-        onStoryCompleted();
-        setStoryProgress(0);
-        setCurrentStoryIndex((prevIndex) => {
-          if (prevIndex === totalStories - 1) return 0;
-
-          return prevIndex + 1;
-        });
-      }
-    }
-  }, [
-    onStoryCompleted,
-    storyProgress,
-    setCurrentStoryIndex,
-    totalStories,
-    currentStoryIndex,
-    onStoriesCompleted,
-  ]);
-
   return (
     <Grid templateColumns={`repeat(${totalStories}, 1fr)`} gap={3} my={6}>
       {times(totalStories, (index: number) => {

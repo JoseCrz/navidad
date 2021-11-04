@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Box } from "@chakra-ui/react";
 
 import { Layout } from "components/Layout";
@@ -10,17 +10,55 @@ import { profiles } from "data/profiles";
 export default function Personajes() {
   const [selectedProfileIndex, setSelectedProfileIndex] = useState(0);
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
+  const [storyProgress, setStoryProgress] = useState(0);
 
   const selectedProfile = profiles[selectedProfileIndex];
   const currentStory = selectedProfile.stories[currentStoryIndex];
 
-  function nextStory() {
-    setCurrentStoryIndex((prev) => prev + 1);
-  }
+  const nextStory = useCallback(() => {
+    if (currentStoryIndex + 1 === selectedProfile.stories.length) {
+      nextProfile();
+    } else {
+      setStoryProgress(0);
+      setCurrentStoryIndex((prev) => prev + 1);
+    }
+  }, [currentStoryIndex, selectedProfile.stories.length]);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setStoryProgress((prevProgress) => prevProgress + 1);
+    }, 36);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (storyProgress === 100) {
+      nextStory();
+    }
+  }, [storyProgress, nextStory]);
 
   function nextProfile() {
+    setStoryProgress(0);
     setCurrentStoryIndex(0);
     setSelectedProfileIndex((prev) => (prev + 1) % profiles.length);
+  }
+
+  function prevProfile() {
+    setStoryProgress(0);
+    setCurrentStoryIndex(0);
+    setSelectedProfileIndex(
+      (prev) => (prev - 1 + profiles.length) % profiles.length
+    );
+  }
+
+  function prevStory() {
+    if (currentStoryIndex - 1 < 0) {
+      prevProfile();
+    } else {
+      setStoryProgress(0);
+      setCurrentStoryIndex((prev) => prev - 1);
+    }
   }
 
   return (
@@ -29,17 +67,21 @@ export default function Personajes() {
         <ProfileSelector
           profiles={profiles}
           selectedIndex={selectedProfileIndex}
-          onSelectProfile={(selectedIndex) =>
-            setSelectedProfileIndex(selectedIndex)
-          }
+          onSelectProfile={(selectedIndex) => {
+            setStoryProgress(0);
+            setCurrentStoryIndex(0);
+            setSelectedProfileIndex(selectedIndex);
+          }}
         />
         <Box height="calc(100vh - 172px)">
           <StoryViewer
             key={selectedProfile.name}
             story={currentStory}
+            storyProgress={storyProgress}
             totalStories={selectedProfile.stories.length}
-            onStoryCompleted={nextStory}
-            onStoriesCompleted={nextProfile}
+            currentStoryIndex={currentStoryIndex}
+            onRequestNextStory={nextStory}
+            onRequestPrevStory={prevStory}
           />
         </Box>
       </Box>
