@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ImageProps } from "next/image";
+import type { BoxProps } from "@chakra-ui/react";
 import { Box, Flex, Text, Heading, AspectRatio } from "@chakra-ui/react";
 import { Layout } from "components/Layout";
 import { Carousel } from "components/Carousel";
@@ -53,6 +54,9 @@ export default function Playlist() {
             overflow="hidden"
             borderRadius="xl"
             height={["380px", "642px"]}
+            sx={{
+              "-webkit-mask-image": "-webkit-radial-gradient(white, black)",
+            }}
           >
             <Iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXauSRu0mFos4?theme=0" />
           </Box>
@@ -69,24 +73,18 @@ export default function Playlist() {
             tortor eget tincidunt ornare. Fusce egestas turpis mauris, vel
             scelerisque diam venenatis vel.
           </Text>
-          <Box mt={9} overflow="hidden" borderRadius="xl">
-            <Iframe
-              src="https://open.spotify.com/embed/track/4pi6QNR8vL1IesR8R7UU4l?theme=0"
-              height="80"
-            />
-          </Box>
-          <Box mt={3} overflow="hidden" borderRadius="xl">
-            <Iframe
-              src="https://open.spotify.com/embed/track/6tXfYX7BHCaafCy4so09gf?theme=0"
-              height="80"
-            />
-          </Box>
-          <Box mt={3} overflow="hidden" borderRadius="xl">
-            <Iframe
-              src="https://open.spotify.com/embed/track/4tZwZVNhVCeBQYQtgQN5vW?theme=0"
-              height="80"
-            />
-          </Box>
+          <SpotifySong
+            mt={9}
+            src="https://open.spotify.com/embed/track/4pi6QNR8vL1IesR8R7UU4l?theme=0"
+          />
+          <SpotifySong
+            mt={3}
+            src="https://open.spotify.com/embed/track/6tXfYX7BHCaafCy4so09gf?theme=0"
+          />
+          <SpotifySong
+            mt={3}
+            src="https://open.spotify.com/embed/track/4tZwZVNhVCeBQYQtgQN5vW?theme=0"
+          />
         </Box>
       </Flex>
     </Layout>
@@ -108,5 +106,25 @@ function CarouselImage(props: ImageProps) {
         {...props}
       />
     </AspectRatio>
+  );
+}
+
+type SpotifySongProps = {
+  src: string;
+} & BoxProps;
+
+function SpotifySong({ src, ...rest }: SpotifySongProps) {
+  return (
+    <Box
+      mt={3}
+      overflow="hidden"
+      borderRadius="xl"
+      sx={{
+        "-webkit-mask-image": "-webkit-radial-gradient(white, black)",
+      }}
+      {...rest}
+    >
+      <Iframe src={src} height="80" />
+    </Box>
   );
 }
