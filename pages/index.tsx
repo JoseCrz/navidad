@@ -12,6 +12,8 @@ import type { BoxProps } from "@chakra-ui/react";
 
 import { Layout } from "components/Layout";
 import logo from "public/el-secreto-logo.png";
+import background from "public/background.svg";
+import train from "public/train.png";
 
 import { profiles } from "data/profiles";
 
@@ -33,7 +35,16 @@ const highlights = [
 export default function Home() {
   return (
     <Layout>
-      <Box as="section" bg="brand.green" width="100%">
+      <Box as="section" bg="brand.green" width="100%" position="relative">
+        <AspectRatio
+          ratio={1200 / 1083}
+          width="100%"
+          height="auto"
+          position="absolute"
+          top="0"
+        >
+          <Image priority src={background} alt="" layout="fill" />
+        </AspectRatio>
         <HomeContainer
           alignItems={["unset", "center"]}
           display={["block", "block", "block", "flex"]}
@@ -89,6 +100,7 @@ export default function Home() {
           display={["block", "block", "flex"]}
           alignItems={["unset", "center"]}
           justifyContent={["unset", "unset", "center"]}
+          pb={5}
         >
           <Box>
             <Heading
@@ -109,6 +121,7 @@ export default function Home() {
               pb="102px"
               px="69px"
               boxShadow="0 3px 6px 0 rgba(0, 0, 0, 0.16)"
+              position="relative"
             >
               <Stack
                 spacing={["49px", 6, 6, 14]}
@@ -133,6 +146,9 @@ export default function Home() {
                 ))}
               </Stack>
             </Box>
+            <Flex justify="center" mt="-12">
+              <Image src={train} alt="" width="161" height="125px" />
+            </Flex>
           </Box>
         </HomeContainer>
       </Box>
