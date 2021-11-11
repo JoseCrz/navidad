@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Box, Flex, Grid, Text, Heading, Container } from "@chakra-ui/react";
+import { Box, Flex, Grid, Container } from "@chakra-ui/react";
 import { times } from "utils";
 import type { Story } from "types";
 
@@ -24,7 +24,7 @@ export function StoryViewer({
   return (
     <Box width="100%" height="100%" position="relative">
       <StoryView
-        key={story.title}
+        key={story.id}
         story={story}
         totalStories={totalStories}
         currentStoryIndex={currentStoryIndex}
@@ -56,29 +56,24 @@ function StoryView({
       <Image
         priority
         src={story.picture}
-        alt={story.alt}
+        alt=""
         layout="fill"
         objectFit="cover"
         placeholder="blur"
       />
       <StoryOverlay>
-        <Flex flexDirection="column" justifyContent="space-between">
+        <Flex
+          flexDirection="column"
+          justifyContent="space-between"
+          width="100%"
+        >
           <StoryHeader>
             <StorySteps
               totalStories={totalStories}
               currentStoryIndex={currentStoryIndex}
               storyProgress={storyProgress}
             />
-            <Heading
-              as="h3"
-              size="md"
-              color="whiteAlpha.800"
-              letterSpacing="widest"
-            >
-              {story.title}
-            </Heading>
           </StoryHeader>
-          <StoryDescription description={story.description} />
         </Flex>
       </StoryOverlay>
     </>
@@ -166,14 +161,14 @@ function StoryHeader({ children }: StoryHeaderProps) {
   return <Container>{children}</Container>;
 }
 
-type StoryDescriptionProps = {
-  description: string;
-};
+// type StoryDescriptionProps = {
+//   description: string;
+// };
 
-function StoryDescription({ description }: StoryDescriptionProps) {
-  return (
-    <Container pb="100px">
-      <Text color="whiteAlpha.900">{description}</Text>
-    </Container>
-  );
-}
+// function StoryDescription({ description }: StoryDescriptionProps) {
+//   return (
+//     <Container pb="100px">
+//       <Text color="whiteAlpha.900">{description}</Text>
+//     </Container>
+//   );
+// }
