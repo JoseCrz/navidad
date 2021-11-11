@@ -1,5 +1,10 @@
 import type { Profile } from "types";
 
+//Pictures
+import mari from "public/mari.png";
+import esferin from "public/esferin.png";
+import doggy from "public/doggy.png";
+
 // Avatars
 import esferinImage from "public/esferin.jpg";
 import arbolinImage from "public/arbolin.jpg";
@@ -20,8 +25,11 @@ import storyImage11 from "public/story-photos/story-11.jpg";
 
 export const profiles: Profile[] = [
   {
-    name: "Esferin",
+    name: "Mari",
+    picture: mari,
     avatar: esferinImage,
+    description:
+      "Es una niña muy inteligente y con un espíritu enorme. Una noche llena de inspiración escribe algo muy misteriosa. ¿Quieres saber qué es?",
     stories: [
       {
         picture: storyImage1,
@@ -54,8 +62,11 @@ export const profiles: Profile[] = [
     ],
   },
   {
-    name: "Arbolin",
+    name: "Esferín",
+    picture: esferin,
     avatar: arbolinImage,
+    description:
+      "Si en verdad tienes un espíritu navideño, Esferín te guiará a cumplir tus sueños. Descubre junto a él El Secreto de la Navidad.",
     stories: [
       {
         picture: storyImage5,
@@ -81,8 +92,11 @@ export const profiles: Profile[] = [
     ],
   },
   {
-    name: "Estrellin",
+    name: "Doggy",
+    picture: doggy,
     avatar: estrellinImage,
+    description:
+      "Si buscas un verdadero compañero, aquí lo tienes.Un perrito que busca compañía para compartir toda la alegría y amor que tiene para dar. Conoce su historia.",
     stories: [
       {
         picture: storyImage8,
