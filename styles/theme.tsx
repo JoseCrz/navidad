@@ -5,6 +5,24 @@ const theme = extendTheme({
     body: `"karmina-sans", "Helvetica", "Arial", sans-serif`,
     heading: `"ohno-blazeface"`,
   },
+  colors: {
+    brand: {
+      red: "#bf0d23",
+      green: "#083f24",
+      greenLight: "#4d9c05",
+      teal: "#1e6859",
+      tealLighter: "#f0f8f6",
+      text: {
+        white: "#fcfcfc",
+        red: "#720a0a",
+        yellow: "#e1b63b",
+        green: "#083f24",
+      },
+      bg: {
+        yellow: "#e2b73b",
+      },
+    },
+  },
 });
 
 export default theme;
