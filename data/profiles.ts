@@ -6,126 +6,60 @@ import esferin from "public/esferin.png";
 import doggy from "public/doggy.png";
 
 // Avatars
-import esferinImage from "public/esferin.jpg";
-import arbolinImage from "public/arbolin.jpg";
-import estrellinImage from "public/estrellin.jpg";
+import mariAvatar from "public/mari-avatar.png";
+import esferinAvatar from "public/esferin-avatar.png";
+import doggyAvatar from "public/doggy-avatar.png";
 
 // Stories
-import storyImage1 from "public/story-photos/story-1.jpg";
-import storyImage2 from "public/story-photos/story-2.jpg";
-import storyImage3 from "public/story-photos/story-3.jpg";
-import storyImage4 from "public/story-photos/story-4.jpg";
-import storyImage5 from "public/story-photos/story-5.jpg";
-import storyImage6 from "public/story-photos/story-6.jpg";
-import storyImage7 from "public/story-photos/story-7.jpg";
-import storyImage8 from "public/story-photos/story-8.jpg";
-import storyImage9 from "public/story-photos/story-9.jpg";
-import storyImage10 from "public/story-photos/story-10.jpg";
-import storyImage11 from "public/story-photos/story-11.jpg";
+import mariStory1 from "public/story-photos/mari-story-1.png";
+import mariStory2 from "public/story-photos/mari-story-2.png";
+import mariStory3 from "public/story-photos/mari-story-3.png";
+
+import esferinStory1 from "public/story-photos/esferin-story-1.png";
+import esferinStory2 from "public/story-photos/esferin-story-2.png";
+import esferinStory3 from "public/story-photos/esferin-story-3.png";
+import esferinStory4 from "public/story-photos/esferin-story-4.png";
+
+import doggyStory1 from "public/story-photos/doggy-story-1.png";
+import doggyStory2 from "public/story-photos/doggy-story-2.png";
+import doggyStory3 from "public/story-photos/doggy-story-3.png";
 
 export const profiles: Profile[] = [
   {
     name: "Mari",
     picture: mari,
-    avatar: esferinImage,
+    avatar: mariAvatar,
     description:
       "Es una niña muy inteligente y con un espíritu enorme. Una noche llena de inspiración escribe algo muy misteriosa. ¿Quieres saber qué es?",
     stories: [
-      {
-        picture: storyImage1,
-        title: "Esferin First Story",
-        alt: "pending",
-        description:
-          "Aliquam lacinia ipsum lacus, eget rutrum sem eleifend vulputate. Cras vestibulum blandit sem, eu sagittis nibh bibendum nec. Duis at varius lorem.",
-      },
-      {
-        picture: storyImage2,
-        title: "Esferin Second Story",
-        alt: "pending",
-        description:
-          "Pellentesque tempus tincidunt tellus a consectetur. Duis non metus elit. Vivamus euismod magna nisl, eget rhoncus massa varius dapibus.",
-      },
-      {
-        picture: storyImage3,
-        title: "Esferin Third Story",
-        alt: "pending",
-        description:
-          "Ut pretium lacus in eros congue, ac accumsan nulla accumsan. Vivamus accumsan euismod risus",
-      },
-      {
-        picture: storyImage4,
-        title: "Fourth Story",
-        alt: "pending",
-        description:
-          "eu tempor sem accumsan vel. Donec tincidunt maximus consequat. Aliquam a enim purus.",
-      },
+      { id: "mariStory1", picture: mariStory1 },
+      { id: "mariStory2", picture: mariStory2 },
+      { id: "mariStory3", picture: mariStory3 },
     ],
   },
   {
     name: "Esferín",
     picture: esferin,
-    avatar: arbolinImage,
+    avatar: esferinAvatar,
     description:
       "Si en verdad tienes un espíritu navideño, Esferín te guiará a cumplir tus sueños. Descubre junto a él El Secreto de la Navidad.",
     stories: [
-      {
-        picture: storyImage5,
-        title: "Arbolin First Story",
-        alt: "pending",
-        description:
-          "Aliquam lacinia ipsum lacus, eget rutrum sem eleifend vulputate. Cras vestibulum blandit sem, eu sagittis nibh bibendum nec. Duis at varius lorem.",
-      },
-      {
-        picture: storyImage6,
-        title: "Arbolin Second Story",
-        alt: "pending",
-        description:
-          "Pellentesque tempus tincidunt tellus a consectetur. Duis non metus elit. Vivamus euismod magna nisl, eget rhoncus massa varius dapibus.",
-      },
-      {
-        picture: storyImage7,
-        title: "Arbolin Third Story",
-        alt: "pending",
-        description:
-          "Ut pretium lacus in eros congue, ac accumsan nulla accumsan. Vivamus accumsan euismod risus",
-      },
+      { id: "esferinStory1", picture: esferinStory1 },
+      { id: "esferinStory2", picture: esferinStory2 },
+      { id: "esferinStory3", picture: esferinStory3 },
+      { id: "esferinStory4", picture: esferinStory4 },
     ],
   },
   {
     name: "Doggy",
     picture: doggy,
-    avatar: estrellinImage,
+    avatar: doggyAvatar,
     description:
       "Si buscas un verdadero compañero, aquí lo tienes.Un perrito que busca compañía para compartir toda la alegría y amor que tiene para dar. Conoce su historia.",
     stories: [
-      {
-        picture: storyImage8,
-        title: "Estrellin First Story",
-        alt: "pending",
-        description:
-          "Aliquam lacinia ipsum lacus, eget rutrum sem eleifend vulputate. Cras vestibulum blandit sem, eu sagittis nibh bibendum nec. Duis at varius lorem.",
-      },
-      {
-        picture: storyImage9,
-        title: "Estrellin Second Story",
-        alt: "pending",
-        description:
-          "Pellentesque tempus tincidunt tellus a consectetur. Duis non metus elit. Vivamus euismod magna nisl, eget rhoncus massa varius dapibus.",
-      },
-      {
-        picture: storyImage10,
-        title: "Estrellin Third Story",
-        alt: "pending",
-        description:
-          "Ut pretium lacus in eros congue, ac accumsan nulla accumsan. Vivamus accumsan euismod risus",
-      },
-      {
-        picture: storyImage11,
-        title: "Fourth Story",
-        alt: "pending",
-        description:
-          "eu tempor sem accumsan vel. Donec tincidunt maximus consequat. Aliquam a enim purus.",
-      },
+      { id: "doggyStory1", picture: doggyStory1 },
+      { id: "doggyStory2", picture: doggyStory2 },
+      { id: "doggyStory3", picture: doggyStory3 },
     ],
   },
 ];
