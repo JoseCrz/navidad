@@ -13,7 +13,7 @@ export function Navbar() {
         position="fixed"
         top="0"
         width="100%"
-        bg="brown"
+        bg="brand.red"
         height="56px"
         justifyContent="space-between"
         alignItems="center"
