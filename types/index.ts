@@ -8,5 +8,7 @@ export type Story = {
 export type Profile = {
   name: string;
   avatar: StaticImageData;
+  picture: StaticImageData;
+  description: string;
   stories: Story[];
 };
