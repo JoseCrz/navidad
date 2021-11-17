@@ -1,9 +1,18 @@
-import { useState, Children } from "react";
+import { useState, useEffect, Children } from "react";
 import { Box, Button } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
-export function Carousel({ children }: { children: React.ReactNode }) {
+type CarouselProps = {
+  children: React.ReactNode;
+  onItemChange?: (activeSlide: number) => void;
+};
+
+export function Carousel({ children, onItemChange = () => {} }: CarouselProps) {
   const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    onItemChange(activeSlide);
+  }, [activeSlide, onItemChange]);
 
   const totalSlides = Children.count(children) - 1;
 
@@ -31,7 +40,6 @@ export function Carousel({ children }: { children: React.ReactNode }) {
         bottom={0}
         width="100%"
         height="100%"
-        bgGradient="linear(to-b, transparent 65%, black)"
       >
         <Box position="absolute" left={0} top="calc(50% - 40px)">
           <Button
@@ -85,6 +93,7 @@ function CarouselItem({
       opacity={isActive ? 1 : 0}
       aria-hidden={isActive ? false : true}
       transition="opacity 600ms ease-in-out 0s, visibility 600ms ease-in-out 0s;"
+      height="100%"
     >
       {children}
     </Box>
