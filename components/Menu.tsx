@@ -18,7 +18,7 @@ type MenuProps = {
 export function Menu({ onRequestClose }: MenuProps) {
   return (
     <Box
-      bg="white"
+      bg="brand.red"
       position="fixed"
       top={0}
       right={0}
@@ -27,7 +27,7 @@ export function Menu({ onRequestClose }: MenuProps) {
       zIndex={9999}
     >
       <Flex
-        bg="brown"
+        bg="brand.red"
         height="56px"
         justifyContent="space-between"
         alignItems="center"
@@ -53,9 +53,9 @@ export function Menu({ onRequestClose }: MenuProps) {
           <VStack alignItems="flex-end" spacing={6}>
             <NavItem href="/">Inicio</NavItem>
             <NavItem href="/personajes">Conocer personajes</NavItem>
-            <NavItem href="/carta">Hacer tu carta</NavItem>
+            {/* <NavItem href="/carta">Haz tu carta a Santa</NavItem> */}
             <NavItem href="/playlist">Escuchar la playlist</NavItem>
-            <NavItem href="/juega">Juega y Gana</NavItem>
+            {/* <NavItem href="/juega">Juega y Gana</NavItem> */}
           </VStack>
         </nav>
       </Container>
@@ -70,7 +70,7 @@ type NavItemProps = {
 function NavItem({ children, href, ...rest }: NavItemProps) {
   return (
     <Link href={href} passHref {...rest}>
-      <ChakraLink fontSize="32px" fontWeight="700" color="gray">
+      <ChakraLink fontSize="32px" fontWeight="700" color="white">
         {children}
       </ChakraLink>
     </Link>
