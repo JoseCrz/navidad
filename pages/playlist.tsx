@@ -45,7 +45,11 @@ export default function Playlist() {
         position="relative"
       >
         <Carousel
-          onItemChange={(activeSlide) => setActivePlaylist(activeSlide)}
+          onItemChange={(activeSlide) => {
+            if (window.innerWidth < 1920) {
+              setActivePlaylist(activeSlide);
+            }
+          }}
         >
           <CarouselImage priority src={bannerMobile1} />
           <CarouselImage src={bannerMobile2} />
@@ -59,7 +63,11 @@ export default function Playlist() {
         position="relative"
       >
         <Carousel
-          onItemChange={(activeSlide) => setActivePlaylist(activeSlide)}
+          onItemChange={(activeSlide) => {
+            if (window.innerWidth >= 1920) {
+              setActivePlaylist(activeSlide);
+            }
+          }}
         >
           <CarouselImage priority src={bannerDesktop1} />
           <CarouselImage src={bannerDesktop2} />
@@ -93,7 +101,7 @@ export default function Playlist() {
               WebkitMaskImage: "-webkit-radial-gradient(white, black)",
             }}
           >
-            <Iframe key={playlistId} src={playlistsUrls[activePlaylist]} />
+            <Iframe key={playlistId} src={playlistId} />
           </Box>
         </Box>
         <Box py={[12, 0]}>
