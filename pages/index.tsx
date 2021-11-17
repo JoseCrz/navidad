@@ -101,10 +101,9 @@ export default function Home() {
           </Box>
         </HomeContainer>
       </Box>
-      <Box as="section" bg="brand.bg.yellow">
+      <Box as="section" pos="relative" bg="brand.bg.yellow">
         <HomeContainer
           display={["block", "block", "flex"]}
-          pos="relative"
           alignItems={["unset", "center"]}
           justifyContent={["unset", "unset", "center"]}
           pb={[5, 5, 10]}
