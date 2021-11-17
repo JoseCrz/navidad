@@ -95,7 +95,7 @@ export default function Home() {
               Estás por descubrir extraordinarias historias de nuestros
               personajes Mari, Doggy y Esferín. Ahora la diversión está mientras
               escuchas una de nuestras increíbles playlist, mientras descargas
-              sorpresas o jugas y ¡ganas premios! Pero lo mejor será escribir tu
+              sorpresas o juegas y ¡ganas premios! Pero lo mejor será escribir tu
               carta a Santa o Los Reyes Magos.
             </Text>
           </Box>
