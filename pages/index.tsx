@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   Box,
   Flex,
@@ -49,9 +50,10 @@ export default function Home() {
           alignItems={["unset", "center"]}
           display={["block", "block", "block", "flex"]}
           flexDirection={["column", "column", "column", "row-reverse"]}
+          pt={[null, null, 10, 10]}
         >
           <Box
-            width={["100%", "100%", "67%", "50%"]}
+            width={["100%", "100%", "100%", "50%"]}
             pl={[0, 0, 0, 10]}
             mx="auto"
           >
@@ -65,15 +67,17 @@ export default function Home() {
             </AspectRatio>
           </Box>
           <Box
-            mt={[0, "114px", "114px", 0]}
+            mt={[0, 0, 0, 0]}
             width={["100%", "100%", "100%", "50%"]}
             pr={[0, 0, 0, 10]}
+            position="relative"
           >
             <Heading
               as="h2"
               fontSize={["50px", "50px", "50px", "72px"]}
               maxWidth={["330px", "100%"]}
               color="brand.text.white"
+              textAlign={["left", "left", "center"]}
             >
               <Box as="span" color="brand.text.yellow">
                 Bienvenido{" "}
@@ -82,9 +86,11 @@ export default function Home() {
             </Heading>
             <Text
               fontWeight="700"
-              mt={4}
+              mt={7}
               color="brand.text.white"
               lineHeight="shorter"
+              fontSize={["md", "md", "20px"]}
+              textAlign={["left", "left", "center"]}
             >
               Estás por descubrir extraordinarias historias de nuestros
               personajes Mari, Doggy y Esferín. Ahora la diversión está mientras
@@ -100,7 +106,8 @@ export default function Home() {
           display={["block", "block", "flex"]}
           alignItems={["unset", "center"]}
           justifyContent={["unset", "unset", "center"]}
-          pb={5}
+          pb={[5, 5, 10]}
+          pt={[12, 12, "120px", "120px"]}
         >
           <Box>
             <Heading
@@ -119,12 +126,12 @@ export default function Home() {
               borderRadius="20px"
               pt="69px"
               pb="102px"
-              px="69px"
+              px={["69px", "69px", "120px"]}
               boxShadow="0 3px 6px 0 rgba(0, 0, 0, 0.16)"
               position="relative"
             >
               <Stack
-                spacing={["49px", 6, 6, 14]}
+                spacing={["49px", 9, 9, 14]}
                 direction={["column", "column", "column", "row"]}
                 justifyContent="center"
                 alignItems="center"
@@ -147,13 +154,19 @@ export default function Home() {
               </Stack>
             </Box>
             <Flex justify="center" mt="-12">
-              <Image src={train} alt="" width="161" height="125px" />
+              <AspectRatio
+                ratio={161 / 125}
+                width={["100%", "194px"]}
+                height={["auto"]}
+              >
+                <Image src={train} alt="" layout="fill" />
+              </AspectRatio>
             </Flex>
           </Box>
         </HomeContainer>
       </Box>
       <Box as="section" bg="brand.tealLighter">
-        <HomeContainer>
+        <HomeContainer pt={[12, 12, 20, 20]}>
           <Heading
             fontSize={["50px", "50px", "50px", "72px"]}
             color="brand.teal"
@@ -174,7 +187,7 @@ export default function Home() {
               return (
                 <Box
                   display={["flex", "flex", "flex", "block"]}
-                  mt={[index > 0 ? "-6" : "0", index > 0 ? "-9" : "0", null, 0]}
+                  mt={[index > 0 ? "-6" : "0", null, null, 0]}
                   key={profile.name}
                   bg={cardColor}
                   borderRadius="2xl"
@@ -209,18 +222,21 @@ export default function Home() {
                     <Text fontSize="xs" lineHeight="short">
                       {profile.description}
                     </Text>
-                    <Button
-                      bg="brand.tealLighter"
-                      color="brand.teal"
-                      textTransform="uppercase"
-                      letterSpacing="wider"
-                      boxShadow="sm"
-                      mt={3}
-                      py={2}
-                      px={4}
-                    >
-                      Enabled
-                    </Button>
+                    <Link href={`/personajes?char=${index}`} passHref>
+                      <Button
+                        as="a"
+                        bg="brand.tealLighter"
+                        color="brand.teal"
+                        textTransform="uppercase"
+                        letterSpacing="wider"
+                        boxShadow="sm"
+                        mt={3}
+                        py={2}
+                        px={4}
+                      >
+                        Entrar
+                      </Button>
+                    </Link>
                   </Box>
                 </Box>
               );
