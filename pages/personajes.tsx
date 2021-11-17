@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useLayoutEffect, useCallback } from "react";
+import { useRouter } from "next/router";
 import { Box } from "@chakra-ui/react";
 
 import { Layout } from "components/Layout";
@@ -8,8 +9,13 @@ import { StoryViewer } from "components/StoryViewer";
 import { profiles } from "data/profiles";
 
 export default function Personajes() {
+  const { query } = useRouter();
+
+  const queryIndex = query.char ? parseInt(query.char as string) : 0;
+
   const [selectedProfileIndex, setSelectedProfileIndex] = useState(0);
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
+
   const [storyProgress, setStoryProgress] = useState(0);
 
   const selectedProfile = profiles[selectedProfileIndex];
@@ -23,6 +29,10 @@ export default function Personajes() {
       setCurrentStoryIndex((prev) => prev + 1);
     }
   }, [currentStoryIndex, selectedProfile.stories.length]);
+
+  useLayoutEffect(() => {
+    setSelectedProfileIndex(queryIndex);
+  }, [queryIndex]);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
