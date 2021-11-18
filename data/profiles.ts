@@ -18,7 +18,7 @@ import mariStory3 from "public/story-photos/mari-story-3.png";
 import esferinStory1 from "public/story-photos/esferin-story-1.png";
 import esferinStory2 from "public/story-photos/esferin-story-2.png";
 import esferinStory3 from "public/story-photos/esferin-story-3.png";
-import esferinStory4 from "public/story-photos/esferin-story-4.png";
+// import esferinStory4 from "public/story-photos/esferin-story-4.png";
 
 import doggyStory1 from "public/story-photos/doggy-story-1.png";
 import doggyStory2 from "public/story-photos/doggy-story-2.png";
@@ -47,7 +47,7 @@ export const profiles: Profile[] = [
       { id: "esferinStory1", picture: esferinStory1 },
       { id: "esferinStory2", picture: esferinStory2 },
       { id: "esferinStory3", picture: esferinStory3 },
-      { id: "esferinStory4", picture: esferinStory4 },
+      // { id: "esferinStory4", picture: esferinStory4 },
     ],
   },
   {
