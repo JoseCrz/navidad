@@ -15,6 +15,7 @@ export default function Personajes() {
 
   const [selectedProfileIndex, setSelectedProfileIndex] = useState(0);
   const [currentStoryIndex, setCurrentStoryIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const [storyProgress, setStoryProgress] = useState(0);
 
@@ -22,6 +23,7 @@ export default function Personajes() {
   const currentStory = selectedProfile.stories[currentStoryIndex];
 
   const nextStory = useCallback(() => {
+    setIsPlaying(true);
     if (currentStoryIndex + 1 === selectedProfile.stories.length) {
       nextProfile();
     } else {
@@ -36,17 +38,23 @@ export default function Personajes() {
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setStoryProgress((prevProgress) => prevProgress + 1);
+      if (isPlaying) {
+        setStoryProgress((prevProgress) => prevProgress + 1);
+      }
     }, 36);
 
     return () => window.clearInterval(interval);
-  }, []);
+  }, [isPlaying]);
 
   useEffect(() => {
     if (storyProgress === 100) {
       nextStory();
     }
   }, [storyProgress, nextStory]);
+
+  useEffect(() => {
+    setIsPlaying(true);
+  }, [selectedProfile]);
 
   function nextProfile() {
     setStoryProgress(0);
@@ -63,12 +71,17 @@ export default function Personajes() {
   }
 
   function prevStory() {
+    setIsPlaying(true);
     if (currentStoryIndex - 1 < 0) {
       prevProfile();
     } else {
       setStoryProgress(0);
       setCurrentStoryIndex((prev) => prev - 1);
     }
+  }
+
+  function togglePlay() {
+    setIsPlaying((prevPlaying) => !prevPlaying);
   }
 
   return (
@@ -91,6 +104,7 @@ export default function Personajes() {
             totalStories={selectedProfile.stories.length}
             currentStoryIndex={currentStoryIndex}
             onRequestNextStory={nextStory}
+            onRequestPause={togglePlay}
             onRequestPrevStory={prevStory}
           />
         </Box>

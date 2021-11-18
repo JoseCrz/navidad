@@ -8,8 +8,8 @@ type StoryViewerProps = {
   totalStories: number;
   currentStoryIndex: number;
   storyProgress: number;
-
   onRequestNextStory: () => void;
+  onRequestPause: () => void;
   onRequestPrevStory: () => void;
 };
 
@@ -19,6 +19,7 @@ export function StoryViewer({
   currentStoryIndex,
   storyProgress,
   onRequestNextStory,
+  onRequestPause,
   onRequestPrevStory,
 }: StoryViewerProps) {
   return (
@@ -32,6 +33,7 @@ export function StoryViewer({
       />
       <StoryControls
         onRequestNextStory={onRequestNextStory}
+        onRequestPause={onRequestPause}
         onRequestPrevStory={onRequestPrevStory}
       />
     </Box>
@@ -82,18 +84,26 @@ function StoryView({
 
 type StoryControlProps = {
   onRequestNextStory: () => void;
+  onRequestPause: () => void;
   onRequestPrevStory: () => void;
 };
 
 function StoryControls({
   onRequestNextStory,
+  onRequestPause,
   onRequestPrevStory,
 }: StoryControlProps) {
   return (
-    <Flex position="absolute" width="100%" height="100%">
-      <Box height="100%" width="50%" onClick={onRequestPrevStory} />
-      <Box height="100%" width="50%" onClick={onRequestNextStory} />
-    </Flex>
+    <Grid
+      templateColumns="1fr 2fr 1fr"
+      position="absolute"
+      width="100%"
+      height="100%"
+    >
+      <Box height="100%" onClick={onRequestPrevStory} />
+      <Box height="100%" onClick={onRequestPause} />
+      <Box height="100%" onClick={onRequestNextStory} />
+    </Grid>
   );
 }
 
