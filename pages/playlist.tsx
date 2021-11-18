@@ -96,7 +96,7 @@ export default function Playlist() {
             overflow="hidden"
             borderRadius="xl"
             height={["380px", "642px"]}
-            maxWidth="351px"
+            // maxWidth="351px"
             sx={{
               WebkitMaskImage: "-webkit-radial-gradient(white, black)",
             }}
