@@ -95,8 +95,8 @@ export default function Home() {
               Estás por descubrir extraordinarias historias de nuestros
               personajes Mari, Doggy y Esferín. Ahora la diversión está mientras
               escuchas una de nuestras increíbles playlist, mientras descargas
-              sorpresas o juegas y ¡ganas premios! Pero lo mejor será escribir tu
-              carta a Santa o Los Reyes Magos.
+              sorpresas o juegas y ¡ganas premios! Pero lo mejor será escribir
+              tu carta a Santa o Los Reyes Magos.
             </Text>
           </Box>
         </HomeContainer>
@@ -106,12 +106,13 @@ export default function Home() {
           display={["block", "block", "flex"]}
           alignItems={["unset", "center"]}
           justifyContent={["unset", "unset", "center"]}
-          pb={[5, 5, 10]}
-          pt={[12, 12, "120px", "120px"]}
+          // pb={[5, 5, 10]}
+          // pt={[12, 12, 12, "120px"]}
+          py={[12, 12, 18, 18]}
         >
           <Box>
             <Heading
-              fontSize={["40px", "50px", "50px", "72px"]}
+              fontSize={["40px", "50px", "50px", "52px", "72px"]}
               color="brand.text.red"
             >
               Recordemos lo que pasamos juntos la{" "}
@@ -124,9 +125,9 @@ export default function Home() {
               mt={[6, 6, 14]}
               bg="brand.teal"
               borderRadius="20px"
-              pt="69px"
-              pb="102px"
-              px={["69px", "69px", "120px"]}
+              py={["69px", null, null, "80px", "120px"]}
+              // pb="102px"
+              px="69px"
               boxShadow="0 3px 6px 0 rgba(0, 0, 0, 0.16)"
               position="relative"
             >
@@ -135,7 +136,7 @@ export default function Home() {
                 direction={["column", "column", "column", "row"]}
                 justifyContent="center"
                 alignItems="center"
-                height={["auto", "auto", "auto", "525px"]}
+                height="auto"
               >
                 {highlights.map((highlight, index) => (
                   <Box key={`key-${index}`} textAlign="center" color="white">
@@ -144,7 +145,7 @@ export default function Home() {
                     </Text>
                     <Text
                       fontWeight="700"
-                      fontSize={["32px", "32px", "32px", "90px"]}
+                      fontSize={["32px", "32px", "32px", "50px"]}
                       lineHeight="1"
                     >
                       {highlight.amount}
