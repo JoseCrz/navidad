@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useCallback } from "react";
 import { useRouter } from "next/router";
-import { Box } from "@chakra-ui/react";
+import { Box, AspectRatio } from "@chakra-ui/react";
 
 import { Layout } from "components/Layout";
 import { ProfileSelector } from "components/ProfileSelector";
@@ -96,18 +96,19 @@ export default function Personajes() {
             setSelectedProfileIndex(selectedIndex);
           }}
         />
-        <Box height="calc(100vh - 172px)">
+        <AspectRatio ratio={621 / 1086}>
           <StoryViewer
             key={selectedProfile.name}
             story={currentStory}
             storyProgress={storyProgress}
             totalStories={selectedProfile.stories.length}
+            isPlaying={isPlaying}
             currentStoryIndex={currentStoryIndex}
             onRequestNextStory={nextStory}
             onRequestPause={togglePlay}
             onRequestPrevStory={prevStory}
           />
-        </Box>
+        </AspectRatio>
       </Box>
     </Layout>
   );

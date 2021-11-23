@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Box, Flex, Grid, Container } from "@chakra-ui/react";
+import Link from "next/link";
+import { Box, Flex, Grid, Container, Icon, Button } from "@chakra-ui/react";
+import { BsPlayFill, BsPauseFill } from "react-icons/bs";
 import { times } from "utils";
 import type { Story } from "types";
 
@@ -8,6 +10,7 @@ type StoryViewerProps = {
   totalStories: number;
   currentStoryIndex: number;
   storyProgress: number;
+  isPlaying: boolean;
   onRequestNextStory: () => void;
   onRequestPause: () => void;
   onRequestPrevStory: () => void;
@@ -18,6 +21,7 @@ export function StoryViewer({
   totalStories,
   currentStoryIndex,
   storyProgress,
+  isPlaying,
   onRequestNextStory,
   onRequestPause,
   onRequestPrevStory,
@@ -32,6 +36,9 @@ export function StoryViewer({
         storyProgress={storyProgress}
       />
       <StoryControls
+        isPlaying={isPlaying}
+        currentStoryIndex={currentStoryIndex}
+        totalStories={totalStories}
         onRequestNextStory={onRequestNextStory}
         onRequestPause={onRequestPause}
         onRequestPrevStory={onRequestPrevStory}
@@ -64,11 +71,7 @@ function StoryView({
         placeholder="blur"
       />
       <StoryOverlay>
-        <Flex
-          flexDirection="column"
-          justifyContent="space-between"
-          width="100%"
-        >
+        <Flex flexDirection="column" width="100%">
           <StoryHeader>
             <StorySteps
               totalStories={totalStories}
@@ -86,12 +89,18 @@ type StoryControlProps = {
   onRequestNextStory: () => void;
   onRequestPause: () => void;
   onRequestPrevStory: () => void;
+  isPlaying: boolean;
+  currentStoryIndex: number;
+  totalStories: number;
 };
 
 function StoryControls({
   onRequestNextStory,
   onRequestPause,
   onRequestPrevStory,
+  isPlaying,
+  currentStoryIndex,
+  totalStories,
 }: StoryControlProps) {
   return (
     <Grid
@@ -103,6 +112,43 @@ function StoryControls({
       <Box height="100%" onClick={onRequestPrevStory} />
       <Box height="100%" onClick={onRequestPause} />
       <Box height="100%" onClick={onRequestNextStory} />
+      <Container position="absolute" top={0} mt={8}>
+        <Flex width="100%" justifyContent="flex-end">
+          <Icon
+            role="button"
+            aria-label="Pausar historia"
+            color="white"
+            as={isPlaying ? BsPauseFill : BsPlayFill}
+            width={10}
+            height={10}
+            onClick={onRequestPause}
+          />
+        </Flex>
+      </Container>
+      {currentStoryIndex + 1 === totalStories && (
+        <Flex
+          position="absolute"
+          bottom="73px"
+          width="100%"
+          justifyContent="center"
+        >
+          <Link href="/playlist" passHref>
+            <Button
+              as="a"
+              bg="brand.tealLighter"
+              color="brand.teal"
+              textTransform="uppercase"
+              letterSpacing="wider"
+              boxShadow="md"
+              mt={3}
+              py={2}
+              px={4}
+            >
+              Entrar
+            </Button>
+          </Link>
+        </Flex>
+      )}
     </Grid>
   );
 }
@@ -119,7 +165,12 @@ function StorySteps({
   storyProgress,
 }: StoryStepsProps) {
   return (
-    <Grid templateColumns={`repeat(${totalStories}, 1fr)`} gap={3} my={6}>
+    <Grid
+      templateColumns={`repeat(${totalStories}, 1fr)`}
+      gap={3}
+      mt={6}
+      mb={5}
+    >
       {times(totalStories, (index: number) => {
         const progress =
           index === currentStoryIndex
