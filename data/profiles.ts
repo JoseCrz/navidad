@@ -14,15 +14,17 @@ import doggyAvatar from "public/doggy-avatar.png";
 import mariStory1 from "public/story-photos/mari-story-1.png";
 import mariStory2 from "public/story-photos/mari-story-2.png";
 import mariStory3 from "public/story-photos/mari-story-3.png";
+import mariStory4 from "public/story-photos/mari-story-4.png";
 
 import esferinStory1 from "public/story-photos/esferin-story-1.png";
 import esferinStory2 from "public/story-photos/esferin-story-2.png";
 import esferinStory3 from "public/story-photos/esferin-story-3.png";
-// import esferinStory4 from "public/story-photos/esferin-story-4.png";
+import esferinStory4 from "public/story-photos/esferin-story-4.png";
 
 import doggyStory1 from "public/story-photos/doggy-story-1.png";
 import doggyStory2 from "public/story-photos/doggy-story-2.png";
 import doggyStory3 from "public/story-photos/doggy-story-3.png";
+import doggyStory4 from "public/story-photos/doggy-story-4.png";
 
 export const profiles: Profile[] = [
   {
@@ -35,6 +37,7 @@ export const profiles: Profile[] = [
       { id: "mariStory1", picture: mariStory1 },
       { id: "mariStory2", picture: mariStory2 },
       { id: "mariStory3", picture: mariStory3 },
+      { id: "mariStory4", picture: mariStory4 },
     ],
   },
   {
@@ -47,7 +50,7 @@ export const profiles: Profile[] = [
       { id: "esferinStory1", picture: esferinStory1 },
       { id: "esferinStory2", picture: esferinStory2 },
       { id: "esferinStory3", picture: esferinStory3 },
-      // { id: "esferinStory4", picture: esferinStory4 },
+      { id: "esferinStory4", picture: esferinStory4 },
     ],
   },
   {
@@ -60,6 +63,7 @@ export const profiles: Profile[] = [
       { id: "doggyStory1", picture: doggyStory1 },
       { id: "doggyStory2", picture: doggyStory2 },
       { id: "doggyStory3", picture: doggyStory3 },
+      { id: "doggyStory4", picture: doggyStory4 },
     ],
   },
 ];
