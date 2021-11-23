@@ -85,7 +85,7 @@ export default function Personajes() {
   }
 
   return (
-    <Layout height="100vh" bg="blackAlpha.800">
+    <Layout>
       <Box maxWidth="487px" mx="auto">
         <ProfileSelector
           profiles={profiles}
