@@ -64,7 +64,7 @@ export default function Playlist() {
       >
         <Carousel
           onItemChange={(activeSlide) => {
-            if (window.innerWidth >= 1920) {
+            if (window.innerWidth >= 1024) {
               setActivePlaylist(activeSlide);
             }
           }}
@@ -77,17 +77,22 @@ export default function Playlist() {
 
       <Flex
         as="section"
-        mt={["-85px", "-95px"]}
+        mt={["-85px", "-45px"]}
         px={[8, 20]}
         direction={["column", "row"]}
         justifyContent="space-between"
         position="relative"
       >
         <Box mr={[0, 6]}>
-          <Heading color="white" fontSize={["24px"]}>
+          <Heading color="white" fontSize={["24px", null, "36px"]}>
             Playlist
           </Heading>
-          <Text mt={3} color="white" fontSize="small" lineHeight="shorter">
+          <Text
+            mt={3}
+            color="white"
+            fontSize={["small", "small", "medium"]}
+            lineHeight="shorter"
+          >
             ¡Nada como escuchar una buena playlist navideña junto a tu familia!
             Contagia de espíritu navideño a todos en casa con esta playlist.
           </Text>
@@ -97,6 +102,7 @@ export default function Playlist() {
             borderRadius="xl"
             height={["380px", "642px"]}
             // maxWidth="351px"
+            width={["auto", null, null, null, "725px"]}
             sx={{
               WebkitMaskImage: "-webkit-radial-gradient(white, black)",
             }}
@@ -110,7 +116,7 @@ export default function Playlist() {
             mt={3}
             mb={9}
             color={["whiteAlpha.700", "white"]}
-            fontSize="small"
+            fontSize={["small", "small", "medium"]}
             lineHeight="shorter"
           >
             Todos están en mood Navidad, no dudes en entrar a una de nuestras
@@ -120,7 +126,7 @@ export default function Playlist() {
             <Flex
               key={playlistsUrls[index]}
               alignItems="center"
-              justifyContent="space-around"
+              justifyContent={["space-around", null, null, null, "unset"]}
               mb={3}
             >
               <Circle
@@ -179,7 +185,7 @@ function SpotifySong({ src, ...rest }: SpotifySongProps) {
       sx={{
         WebkitMaskImage: "-webkit-radial-gradient(white, black)",
       }}
-      width={["253px", "225px"]}
+      width={["253px", "225px", null, "auto"]}
       {...rest}
     >
       <Iframe src={src} height="80" />
