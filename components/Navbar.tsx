@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Flex, Button } from "@chakra-ui/react";
+import { Flex, Button, Box } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 import { Menu } from "./Menu";
+import { LinkStyled } from "./LinkStyled";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,36 @@ export function Navbar() {
             />
           </a>
         </Link>
-        <Button bg="transparent" padding={0}>
+        <Box display={["none", "none", "block"]}>
+          <LinkStyled
+            href="/"
+            color="white"
+            _hover={{ color: "brand.text.yellow" }}
+          >
+            Inicio
+          </LinkStyled>
+          <LinkStyled
+            href="/personajes"
+            color="white"
+            _hover={{ color: "brand.text.yellow" }}
+            ml={5}
+          >
+            Conocer personajes
+          </LinkStyled>
+          <LinkStyled
+            href="/playlist"
+            color="white"
+            _hover={{ color: "brand.text.yellow" }}
+            ml={5}
+          >
+            Escuchar la playlist
+          </LinkStyled>
+        </Box>
+        <Button
+          bg="transparent"
+          padding={0}
+          display={["block", "block", "none"]}
+        >
           <HamburgerIcon
             color="white"
             width="32px"
