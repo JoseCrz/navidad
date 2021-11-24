@@ -84,7 +84,7 @@ export default function Playlist() {
         position="relative"
       >
         <Box mr={[0, 6]}>
-          <Heading color="white" fontSize={["24px", null, "36px"]}>
+          <Heading color="white" fontSize={["24px", null, "36px"]} fontWeight="500">
             Playlist
           </Heading>
           <Text
@@ -111,7 +111,7 @@ export default function Playlist() {
           </Box>
         </Box>
         <Box py={[12, 0]}>
-          <Heading color="white">Actividad</Heading>
+          <Heading color="white" fontWeight="500">Actividad</Heading>
           <Text
             mt={3}
             mb={9}

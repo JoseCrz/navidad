@@ -73,6 +73,7 @@ export default function Home() {
             position="relative"
           >
             <Heading
+              fontWeight="500"
               as="h2"
               fontSize={["50px", "50px", "50px", "72px"]}
               maxWidth={["330px", "100%"]}
@@ -114,6 +115,7 @@ export default function Home() {
             <Heading
               fontSize={["40px", "50px", "50px", "52px", "72px"]}
               color="brand.text.red"
+              fontWeight="500"
             >
               Recordemos lo que pasamos juntos la{" "}
               <Box as="span" color="brand.text.green">
@@ -171,6 +173,7 @@ export default function Home() {
           <Heading
             fontSize={["50px", "50px", "50px", "72px"]}
             color="brand.teal"
+            fontWeight="500"
           >
             Conoce a nuestros personajes
           </Heading>
