@@ -15,6 +15,9 @@ import { Layout } from "components/Layout";
 import logo from "public/el-secreto-logo.png";
 import background from "public/background.svg";
 import train from "public/train.png";
+import backgroundVideo from "public/background-video.png"
+import thumbnail from "public/video-tumbnail.png"
+import playVideoIcon from "public/play-icon.svg"
 
 import { profiles } from "data/profiles";
 
@@ -168,7 +171,63 @@ export default function Home() {
           </Box>
         </HomeContainer>
       </Box>
-      <Box as="section" bg="brand.tealLighter">
+      <Box as="section" width="100%" pos="relative"> 
+        <AspectRatio
+          ratio={1200 / 1083}
+          width="100%"
+          height="auto"
+          position="absolute"
+          top="0"
+        >
+          <Image priority src={backgroundVideo} alt="" layout="fill" />
+        </AspectRatio>
+        <HomeContainer
+          alignItems={["unset", "center"]}
+          display={["flex", "flex", "flex", "flex"]}
+          flexDirection={["row-reverse", "row-reverse", "row-reverse", "row-reverse"]}
+          pt={[null, null, 10, 10]}
+          minHeight="auto"
+        >
+          <Box
+            width={["50%", "50%", "50%", "50%"]}
+            pl={[0, 0, 0, 10]}
+            mx="auto"
+          >
+            <AspectRatio ratio={21/9} width="100%" height="auto">
+              <Link href="https://www.youtube.com/watch?v=ORa_urPTGjg&t=3s">
+                <a target="_blank">
+                <Image
+                  priority
+                  src={playVideoIcon}
+                  alt="play"
+                  layout="fill"
+                />
+                </a>
+              </Link>
+            </AspectRatio>
+          </Box>
+          <Box
+            width={["50%", "50%", "50%", "50%"]}
+            pl={[0, 0, 0, 10]}
+            mx="auto"
+          >
+            <AspectRatio ratio={237 / 157} width="100%" height="auto">
+            <Link href="https://www.youtube.com/watch?v=ORa_urPTGjg&t=3s">
+                <a target="_blank">
+                  <Image
+                    priority
+                    src={thumbnail}
+                    alt="El Secreto de la Navidad Logo"
+                    layout="fill"
+                  />
+              </a>
+            </Link>
+            </AspectRatio>
+          </Box>
+          
+        </HomeContainer>
+      </Box>
+      <Box as="section" bg="brand.tealLighter" pos="relative">
         <HomeContainer pt={[12, 12, 20, 20]}>
           <Heading
             fontSize={["50px", "50px", "50px", "72px"]}
