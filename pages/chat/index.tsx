@@ -7,6 +7,7 @@ import { ChatChooser } from "components/Chat/ChatChooser";
 import elf1 from "public/chat-elf-1.png";
 import elf2 from "public/chat-elf-2.png";
 import gift from "public/chat-gift.png";
+import chatArrow from "public/chat-arrow.svg";
 
 type ChatWelcomeProps = {
   onRequestInit: () => void;
@@ -74,8 +75,11 @@ function ChatStarter() {
     <Box maxWidth="487px" mx="auto">
       <ChatChooser />
       <Container height="100%" textAlign="center">
+        <Box textAlign="left" mt="10">
+          <Image src={chatArrow} width="215" height="222" alt="" />
+        </Box>
         <Box maxWidth="254px" mx="auto">
-          <Heading color="white" fontWeight="normal" mt="200px" fontSize="24px">
+          <Heading color="white" fontWeight="normal" mt="8" fontSize="24px">
             Chatea con Santa o con los Reyes Magos
           </Heading>
           <Text color="brand.text.blue" mt={4}>
