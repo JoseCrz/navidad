@@ -56,6 +56,14 @@ export function Navbar() {
           >
             Escuchar la playlist
           </LinkStyled>
+          <LinkStyled
+            href="/chat"
+            color="white"
+            _hover={{ color: "brand.text.yellow" }}
+            ml={5}
+          >
+            Chat
+          </LinkStyled>
         </Box>
         <Button
           bg="transparent"

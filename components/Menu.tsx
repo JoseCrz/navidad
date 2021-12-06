@@ -53,8 +53,8 @@ export function Menu({ onRequestClose }: MenuProps) {
           <VStack alignItems="flex-end" spacing={6}>
             <NavItem href="/">Inicio</NavItem>
             <NavItem href="/personajes">Conocer personajes</NavItem>
-            {/* <NavItem href="/carta">Haz tu carta a Santa</NavItem> */}
             <NavItem href="/playlist">Escuchar la playlist</NavItem>
+            <NavItem href="/chat">Chat</NavItem>
             {/* <NavItem href="/juega">Juega y Gana</NavItem> */}
           </VStack>
         </nav>
