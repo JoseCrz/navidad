@@ -1,22 +1,12 @@
 import { useState } from "react";
 import Image from "next/image";
-import {
-  Box,
-  Flex,
-  Container,
-  Heading,
-  Text,
-  Button,
-  Circle,
-} from "@chakra-ui/react";
+import { Box, Flex, Container, Heading, Text, Button } from "@chakra-ui/react";
 import { Layout } from "components/Layout";
+import { ChatChooser } from "components/Chat/ChatChooser";
 
 import elf1 from "public/chat-elf-1.png";
 import elf2 from "public/chat-elf-2.png";
 import gift from "public/chat-gift.png";
-
-import reyesProfile from "public/reyes-profile.png";
-import santaProfile from "public/santa-profile.png";
 
 type ChatWelcomeProps = {
   onRequestInit: () => void;
@@ -79,59 +69,10 @@ function ChatWelcome({ onRequestInit }: ChatWelcomeProps) {
   );
 }
 
-function ChatChooser() {
+function ChatStarter() {
   return (
     <Box maxWidth="487px" mx="auto">
-      <Flex
-        bg="white"
-        width="100%"
-        minHeight="116px"
-        justifyContent="center"
-        boxShadow="0 3px 6px 0 rgba(0, 0, 0, 0.16)"
-        zIndex="1"
-        position="relative"
-      >
-        <Flex alignItems="center">
-          <Box textAlign="center" mx={2}>
-            <Circle
-              border={"3px solid gray"}
-              overflow="hidden"
-              position="relative"
-              size="66px"
-            >
-              <Image
-                priority
-                src={santaProfile}
-                alt={`Imagen de Perfil de Santa`}
-                layout="fill"
-                objectFit="cover"
-                sizes="50vw"
-                placeholder="blur"
-              />
-            </Circle>
-            <Text>Santa</Text>
-          </Box>
-          <Box textAlign="center" mx={2}>
-            <Circle
-              border={"3px solid gray"}
-              overflow="hidden"
-              position="relative"
-              size="66px"
-            >
-              <Image
-                priority
-                src={reyesProfile}
-                alt={`Imagen de Perfil de los Reyes`}
-                layout="fill"
-                objectFit="cover"
-                sizes="50vw"
-                placeholder="blur"
-              />
-            </Circle>
-            <Text>Reyes</Text>
-          </Box>
-        </Flex>
-      </Flex>
+      <ChatChooser />
       <Container height="100%" textAlign="center">
         <Box maxWidth="254px" mx="auto">
           <Heading color="white" fontWeight="normal" mt="200px" fontSize="24px">
@@ -162,7 +103,7 @@ export default function Chat() {
         paddingTop="1px"
       >
         {isInitialized ? (
-          <ChatChooser />
+          <ChatStarter />
         ) : (
           <ChatWelcome onRequestInit={initialize} />
         )}
