@@ -54,7 +54,7 @@ export function Menu({ onRequestClose }: MenuProps) {
             <NavItem href="/">Inicio</NavItem>
             <NavItem href="/personajes">Conocer personajes</NavItem>
             <NavItem href="/playlist">Escuchar la playlist</NavItem>
-            {/* <NavItem href="/chat">Chat</NavItem> */}
+            <NavItem href="/chat">Haz tu carta</NavItem>
             {/* <NavItem href="/juega">Juega y Gana</NavItem> */}
           </VStack>
         </nav>

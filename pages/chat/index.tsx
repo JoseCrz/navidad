@@ -76,7 +76,7 @@ function ChatStarter() {
       <ChatChooser />
       <Container height="100%" textAlign="center">
         <Box textAlign="left" mt="10">
-          <Image src={chatArrow} width="215" height="222" alt="" />
+          <Image priority src={chatArrow} width="215" height="222" alt="" />
         </Box>
         <Box maxWidth="254px" mx="auto">
           <Heading color="white" fontWeight="normal" mt="8" fontSize="24px">
