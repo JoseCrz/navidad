@@ -1,9 +1,9 @@
 import type { Profile } from "types";
 
 //Pictures
-import mari from "public/mari.png";
-import esferin from "public/esferin.png";
-import doggy from "public/doggy.png";
+import mari from "public/MARY-ESCRITORIO.gif";
+import esferin from "public/ESFERIN-ESCRITORIO.gif";
+import doggy from "public/DOGI-ESCRITORIO.gif";
 
 // Avatars
 import mariAvatar from "public/mari-avatar.png";
