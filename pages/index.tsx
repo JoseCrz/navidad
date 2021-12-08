@@ -270,7 +270,7 @@ export default function Home() {
                         alt="Esferin"
                         layout="fill"
                         objectFit="cover"
-                        placeholder="blur"
+                        // placeholder="blur"
                       />
                     </AspectRatio>
                   </Box>
