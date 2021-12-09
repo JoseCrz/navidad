@@ -15,9 +15,8 @@ import { Layout } from "components/Layout";
 import logo from "public/el-secreto-logo.png";
 import background from "public/background.svg";
 import train from "public/train.png";
-import backgroundVideo from "public/back-video.svg"
-import thumbnail from "public/reproductor.png"
-import playVideoIcon from "public/play-icon.svg"
+import backgroundVideo from "public/back-video.svg";
+import thumbnail from "public/reproductor.png";
 
 import { profiles } from "data/profiles";
 
@@ -171,7 +170,7 @@ export default function Home() {
           </Box>
         </HomeContainer>
       </Box>
-      <Box as="section" width="100%" pos="relative"> 
+      <Box as="section" width="100%" pos="relative">
         <AspectRatio
           ratio={959 / 409}
           width="100%"
@@ -196,7 +195,7 @@ export default function Home() {
             my="0"
           >
             <AspectRatio ratio={350 / 196} width="100%" height="auto">
-            <Link href="https://www.youtube.com/watch?v=ORa_urPTGjg&t=3s">
+              <Link href="https://www.youtube.com/watch?v=ORa_urPTGjg&t=3s">
                 <a target="_blank">
                   <Image
                     priority
@@ -204,11 +203,10 @@ export default function Home() {
                     alt="El Secreto de la Navidad Logo"
                     layout="fill"
                   />
-              </a>
-            </Link>
+                </a>
+              </Link>
             </AspectRatio>
           </Box>
-          
         </HomeContainer>
       </Box>
       <Box as="section" bg="brand.tealLighter" pos="relative">
