@@ -15,8 +15,8 @@ import { Layout } from "components/Layout";
 import logo from "public/el-secreto-logo.png";
 import background from "public/background.svg";
 import train from "public/train.png";
-import backgroundVideo from "public/background-video.png"
-import thumbnail from "public/video-tumbnail.png"
+import backgroundVideo from "public/back-video.svg"
+import thumbnail from "public/reproductor.png"
 import playVideoIcon from "public/play-icon.svg"
 
 import { profiles } from "data/profiles";
@@ -173,7 +173,7 @@ export default function Home() {
       </Box>
       <Box as="section" width="100%" pos="relative"> 
         <AspectRatio
-          ratio={1200 / 1083}
+          ratio={959 / 409}
           width="100%"
           height="auto"
           position="absolute"
@@ -184,34 +184,18 @@ export default function Home() {
         <HomeContainer
           alignItems={["unset", "center"]}
           display={["flex", "flex", "flex", "flex"]}
-          flexDirection={["row-reverse", "row-reverse", "row-reverse", "row-reverse"]}
-          pt={[null, null, 10, 10]}
+          pt={[2, null, 10, 10]}
+          pb={[2, null, 10, 10]}
+          py={[0, 0, 0, 0]}
           minHeight="auto"
         >
           <Box
-            width={["50%", "50%", "50%", "50%"]}
-            pl={[0, 0, 0, 10]}
+            width={["80%", "70%", "80%", "80%"]}
+            pl={[0, 0, 0, 0]}
             mx="auto"
+            my="0"
           >
-            <AspectRatio ratio={21/9} width="100%" height="auto">
-              <Link href="https://www.youtube.com/watch?v=ORa_urPTGjg&t=3s">
-                <a target="_blank">
-                <Image
-                  priority
-                  src={playVideoIcon}
-                  alt="play"
-                  layout="fill"
-                />
-                </a>
-              </Link>
-            </AspectRatio>
-          </Box>
-          <Box
-            width={["50%", "50%", "50%", "50%"]}
-            pl={[0, 0, 0, 10]}
-            mx="auto"
-          >
-            <AspectRatio ratio={237 / 157} width="100%" height="auto">
+            <AspectRatio ratio={350 / 196} width="100%" height="auto">
             <Link href="https://www.youtube.com/watch?v=ORa_urPTGjg&t=3s">
                 <a target="_blank">
                   <Image
