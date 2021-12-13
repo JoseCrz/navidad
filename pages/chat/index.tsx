@@ -30,14 +30,14 @@ function ChatWelcome({ onRequestInit }: ChatWelcomeProps) {
           color="white"
           fontSize="50px"
           lineHeight="shorter"
-          mt="32"
+          mt="16"
           fontWeight="normal"
         >
           Chat
           <br />
           Mágico
         </Heading>
-        <Box mt="16" maxWidth="297px">
+        <Box mt="10" maxWidth="297px" fontSize={["md", "xl", "2xl", "2xl"]}>
           <Text color="brand.text.blue" fontWeight="bold" lineHeight="shorter">
             ¿Cómo te has portado?
             <br />
