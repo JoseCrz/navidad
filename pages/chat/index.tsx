@@ -47,7 +47,7 @@ function ChatWelcome({ onRequestInit }: ChatWelcomeProps) {
           </Text>
           <Text color="white" fontWeight="bold" lineHeight="shorter">
             Todo eso te preguntará Santa y probablemente los Reyes Magos lo
-            vieron, pero bueno, nada mejor que tu mismo platiques con ellos y
+            vieron, pero bueno, nada mejor que tú mismo platiques con ellos y
             les digas lo sucedido.
           </Text>
           <Text color="brand.text.blue" fontWeight="bold" lineHeight="shorter">
