@@ -30,14 +30,14 @@ function ChatWelcome({ onRequestInit }: ChatWelcomeProps) {
           color="white"
           fontSize="50px"
           lineHeight="shorter"
-          mt="32"
+          mt="16"
           fontWeight="normal"
         >
           Chat
           <br />
           Mágico
         </Heading>
-        <Box mt="16" maxWidth="297px">
+        <Box mt="10" maxWidth="297px" fontSize={["md", "xl", "2xl", "2xl"]}>
           <Text color="brand.text.blue" fontWeight="bold" lineHeight="shorter">
             ¿Cómo te has portado?
             <br />
@@ -47,7 +47,7 @@ function ChatWelcome({ onRequestInit }: ChatWelcomeProps) {
           </Text>
           <Text color="white" fontWeight="bold" lineHeight="shorter">
             Todo eso te preguntará Santa y probablemente los Reyes Magos lo
-            vieron, pero bueno, nada mejor que tu mismo platiques con ellos y
+            vieron, pero bueno, nada mejor que tú mismo platiques con ellos y
             les digas lo sucedido.
           </Text>
           <Text color="brand.text.blue" fontWeight="bold" lineHeight="shorter">
