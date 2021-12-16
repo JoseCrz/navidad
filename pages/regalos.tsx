@@ -17,38 +17,73 @@ import cartaSantaImg from "public/regalos/carta-santa.png";
 import cartaReyesImg from "public/regalos/carta-reyes.png";
 import memoramaImg from "public/regalos/memorama.png";
 import wallpaperImg from "public/regalos/wallpaper.png";
+import giftsImg from "public/regalos/gifts.png";
 
 export default function Regalos() {
   return (
-    <Layout bg="brand.bg.yellow">
-      <Box px={8} py={9}>
-        <Heading color="brand.text.green" fontSize={["50px"]}>
-          Regalos
-        </Heading>
-        <Text
-          mt={[3]}
-          color="white"
-          fontWeight="bold"
-          fontSize={["16px"]}
-          lineHeight="shorter"
-        >
-          ¿Qué sería de una increíble e inolvidable Navidad sin regalos? Es por
-          eso que en El Secreto de la Navidad tenemos los mejores solo para ti
-          ¡Descúbrelos!
-        </Text>
-
-        <Box mt={6}>
-          <Grid
-            minHeight="calc((170px * 4) + 20px)"
-            templateColumns="repeat(2, 1fr)"
-            templateRows="repeat(4, 1fr)"
-            gap="10px"
+    <Layout bg="brand.bg.yellow" minHeight={[null, "100vh"]}>
+      <Box
+        px={[8, 16, null, null, 0]}
+        py={[9, null, 24, null, 14]}
+        maxWidth="982px"
+        mx="auto"
+      >
+        <Flex justifyContent="space-between" alignItems={["flex-start"]}>
+          <Box maxWidth={["100%", null, "287px", null, "396px"]}>
+            <Heading color="brand.text.green" fontSize={["50px", "72px"]}>
+              Regalos
+            </Heading>
+            <Text
+              mt={[3]}
+              color="white"
+              fontWeight="bold"
+              fontSize={["16px", null, null, null, "22px"]}
+              lineHeight="shorter"
+            >
+              ¿Qué sería de una increíble e inolvidable Navidad sin regalos? Es
+              por eso que en El Secreto de la Navidad tenemos los mejores solo
+              para ti ¡Descúbrelos!
+            </Text>
+          </Box>
+          <Box
+            display={["none", "none", "block"]}
+            width={[null, null, "48%", "50%"]}
           >
-            <GiftsGridItem bg="#4DA505" colSpan={2}>
+            <Image
+              priority
+              src={giftsImg}
+              alt="Regalos preparandose para ser enviados"
+              layout="responsive"
+              placeholder="blur"
+            />
+          </Box>
+        </Flex>
+
+        <Box mt={[6, null, 28, null, 7]}>
+          <Grid
+            minHeight={[
+              "calc((170px * 4) + 20px)",
+              null,
+              "calc((161px * 2) + 10px)",
+              null,
+              "calc((234px * 2) + 14px)",
+            ]}
+            templateColumns={["repeat(2, 1fr)", "repeat(4, 1fr)"]}
+            templateRows={["repeat(4, 1fr)", "repeat(2, 1fr)"]}
+            gap={["10px", null, null, null, "14px"]}
+          >
+            <GiftsGridItem bg="#4DA505" colSpan={[2, 2]}>
               <GridImage src={stickersImg} sizes="84vw" />
               <GridCTA href="https://sticker.ly/s/MF8PFB" pb={4} />
             </GiftsGridItem>
-            <GiftsGridItem bg="#F80123" colSpan={1}>
+            <GiftsGridItem
+              bg="#F80123"
+              colSpan={1}
+              colStart={[null, null, 1]}
+              colEnd={[null, null, 2]}
+              rowStart={[null, null, 2]}
+              rowEnd={[null, null, 3]}
+            >
               <GridImage src={cartaSantaImg} sizes="50vw" />
               <GridCTA
                 href="https://drive.google.com/uc?id=1GlHwQmnzXX1eUY5lpIyCDxH9Z9Gpmysg&export=download"
@@ -58,7 +93,14 @@ export default function Regalos() {
                 paddingRight={3}
               />
             </GiftsGridItem>
-            <GiftsGridItem bg="#5DBFBB" colSpan={1}>
+            <GiftsGridItem
+              bg="#5DBFBB"
+              colSpan={1}
+              colStart={[null, null, 2]}
+              colEnd={[null, null, 3]}
+              rowStart={[null, null, 2]}
+              rowEnd={[null, null, 3]}
+            >
               <GridImage src={cartaReyesImg} sizes="50vw" />
               <GridCTA
                 href="https://drive.google.com/uc?id=1DJwXQAVh50sATdJuMqryKgjGFIIYTGUx&export=download"
