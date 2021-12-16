@@ -64,6 +64,14 @@ export function Navbar() {
           >
             Haz tu carta
           </LinkStyled>
+          <LinkStyled
+            href="/regalos"
+            color="white"
+            _hover={{ color: "brand.text.yellow" }}
+            ml={5}
+          >
+            Regalos
+          </LinkStyled>
         </Box>
         <Button
           bg="transparent"
