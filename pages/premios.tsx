@@ -53,9 +53,9 @@ export default function Premios() {
               <Box lineHeight='30px'>
               <Text>
                 <Box as="span" fontSize='32px'>
-                1
+                2
                 </Box>
-                er lugar
+                do lugar
                 </Text>
                 <Text fontSize='32px'>
                 $5,000 <br/>
@@ -65,7 +65,7 @@ export default function Premios() {
               <Box lineHeight='30px'>
               <Text>
                 <Box as="span" fontSize='32px'>
-                1
+                3
                 </Box>
                 er lugar
                 </Text>
@@ -77,6 +77,15 @@ export default function Premios() {
             </Grid>
           </Box>
         </Flex>
+      </Box>
+      <Box bgColor='#BF0D23' h='100vh'>
+        <Box pt='170px'>
+          <Image 
+          priority
+          src={rompecabezasImg}
+          alt='rompecabezas sorteo'
+          />
+        </Box>
       </Box>
 
     </Layout>
