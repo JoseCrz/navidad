@@ -173,7 +173,7 @@ function GridCTA({ href, fontSize = "14px", ...rest }: GridCTAProps) {
       {...rest}
     >
       <Link
-        href="https://sticker.ly/s/MF8PFB"
+        href={href}
         target="_blank"
         fontWeight="bold"
         rel="noopener noreferrer"
