@@ -22,7 +22,7 @@ export default function Premios() {
     <Layout>
       <Box display={['block', 'block', 'flex' ]}>
         <Box bg='brand.green' h="auto" w={['100%', '100%', '30%']} p={4} color='white'>
-          <Heading pb='5' fontWeight='500' fontSize='60px' lineHeight='60px' mt='5'>Más de $50,000 mxn en premios</Heading>
+          <Heading pb='5' fontWeight='500' fontSize='60px' lineHeight='60px' mt='5'>Más de $30,000 mxn en premios</Heading>
           ¡Todos pueden participar! Para los peques un rompecabezas y para los grandes una trivia especial de Juguetron. ¡Gánate una Tarjeta de Regalo! Tienes hasta el 23 de diciembre para participar.
           
           <Flex flexDirection='column' alignItems='center'>
