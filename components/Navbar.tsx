@@ -72,6 +72,14 @@ export function Navbar() {
           >
             Regalos
           </LinkStyled>
+          <LinkStyled
+            href="/premios"
+            color="white"
+            _hover={{ color: "brand.text.yellow" }}
+            ml={5}
+          >
+            Juega y gana
+          </LinkStyled>
         </Box>
         <Button
           bg="transparent"
