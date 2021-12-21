@@ -31,6 +31,7 @@ export default function Premios() {
               priority
               src={regalosImg}
               alt="Regalos"
+              placeholder="blur"
               />
             </Box>
             <Box boxShadow='2xl' bgColor='white' maxWidth='350px' borderRadius='13px'>
@@ -92,6 +93,7 @@ export default function Premios() {
                   priority
                   src={rompecabezasImg}
                   alt='rompecabezas sorteo'
+                  placeholder="blur"
                   />
                 
                 </GridItem>
@@ -143,6 +145,7 @@ export default function Premios() {
                   priority
                   src={TriviaImg}
                   alt='rompecabezas sorteo'
+                  placeholder="blur"
                   />
                 
                 </GridItem>
