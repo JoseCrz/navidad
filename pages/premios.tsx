@@ -22,7 +22,7 @@ export default function Premios() {
     <Layout>
       <Box display={['block', 'block', 'flex' ]}>
         <Box bg='brand.green' h="auto" w={['100%', '100%', '30%']} p={4} color='white'>
-          <Heading fontWeight='500' fontSize='60px' lineHeight='60px' mt='5'>Más de $50,000 mxn en premios</Heading>
+          <Heading pb='5' fontWeight='500' fontSize='60px' lineHeight='60px' mt='5'>Más de $50,000 mxn en premios</Heading>
           ¡Todos pueden participar! Para los peques un rompecabezas y para los grandes una trivia especial de Juguetron. ¡Gánate una Tarjeta de Regalo! Tienes hasta el 23 de diciembre para participar.
           
           <Flex flexDirection='column' alignItems='center'>
@@ -62,7 +62,7 @@ export default function Premios() {
                   do lugar
                   </Text>
                   <Text fontSize='32px'>
-                  $5,000 <br/>
+                  $3,000 <br/>
                   mxn*
                   </Text>
                 </Box>
@@ -74,7 +74,7 @@ export default function Premios() {
                   er lugar
                   </Text>
                   <Text fontSize='32px'>
-                  $5,000 <br/>
+                  $2,000 <br/>
                   mxn*
                   </Text>
                 </Box>
@@ -105,7 +105,7 @@ export default function Premios() {
                       zIndex='2'
                     >
                       <Link
-                        href="https://sticker.ly/s/MF8PFB"
+                        href="https://a.cstmapp.com/p/923864"
                         target="_blank"
                         fontWeight="bold"
                         rel="noopener noreferrer"
@@ -156,7 +156,7 @@ export default function Premios() {
                       zIndex='2'
                     >
                       <Link
-                        href="https://sticker.ly/s/MF8PFB"
+                        href="https://a.cstmapp.com/p/923801"
                         target="_blank"
                         fontWeight="bold"
                         rel="noopener noreferrer"
