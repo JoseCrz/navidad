@@ -35,7 +35,7 @@ export default function Premios() {
             </Box>
             <Box boxShadow='2xl' bgColor='white' maxWidth='350px' borderRadius='13px'>
               <Grid  
-              templateColumns='repeat(3, 1fr)'
+              templateColumns='repeat(1, 1fr)'
               color='brand.green' 
               fontWeight="700" 
               textAlign="center"
@@ -44,17 +44,16 @@ export default function Premios() {
               >
                 <Box lineHeight='30px'>
                   <Text>
-                  <Box as="span" fontSize='32px'>
+                  {/* <Box as="span" fontSize='32px'>
                   1
-                  </Box>
-                  er lugar
+                  </Box> */}
                   </Text>
                   <Text fontSize='32px'>
-                  $5,000 <br/>
-                  mxn*
+                  ¡Tú también puedes ganar una Tarjeta de regalo participando en nuestras dinámicas!<br/>
                   </Text>
+                  *En tarjeta de regalo para compras en tienda 
                 </Box>
-                <Box lineHeight='30px'>
+                {/* <Box lineHeight='30px'>
                 <Text>
                   <Box as="span" fontSize='32px'>
                   2
@@ -77,7 +76,7 @@ export default function Premios() {
                   $2,000 <br/>
                   mxn*
                   </Text>
-                </Box>
+                </Box> */}
               </Grid>
             </Box>
           </Flex>
