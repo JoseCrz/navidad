@@ -11,15 +11,11 @@ import {
 } from "@chakra-ui/react";
 
 import regalosImg from "public/premios-photos/regalos.png";
-// import lolSurpiseImg from "public/premios-photos/lol-surprise.jpeg";
-// import bkgbuttomImg from "public/premios-photos/backbottom.svg";
-import TriviaImg from "public/premios-photos/trivia.png";
-import bkgtriviaImg from "public/premios-photos/backtrivia.svg";
 import lolRevealImg from "public/premios-photos/lol-reveal.png";
 
 export default function Premios() {
   return (
-    <Layout>
+    <Layout bg="brand.green">
       <Box display={["block", "block", "flex"]}>
         <Box
           bg="brand.green"
@@ -31,15 +27,15 @@ export default function Premios() {
           <Heading
             pb="5"
             fontWeight="500"
-            fontSize={["40px", "70px", "60px"]}
-            lineHeight={["40px", "60px", "60px"]}
+            fontSize={["40px", "70px", "35px"]}
+            lineHeight={["40px", "60px", "40px"]}
             mt="5"
           >
             ¡Tú también puedes ganar premios increíbles participando en nuestras
             dinámicas!
           </Heading>
           ¡Creamos la dinámica perfecta para que te diviertas y ganes premios
-          increíbles! Descubre cuales son. Tienes hasta el 23 de diciembre para
+          increíbles! Descubre cuales son. Tienes hasta el 3 de enero del 2022 para
           participar.
           <Flex flexDirection="column" alignItems="center">
             <Box width="200px" display="flex">
@@ -71,11 +67,10 @@ export default function Premios() {
                   </Box> */}
                   </Text>
                   <Text fontSize="32px">
-                    ¡Tú también puedes ganar una Tarjeta de regalo participando
-                    en nuestras dinámicas!
+                  ¡Tú también puedes ganar increíbles regalos participando en nuestras dinámicas!
                     <br />
                   </Text>
-                  *En tarjeta de regalo para compras en tienda
+                  {/* *En tarjeta de regalo para compras en tienda */}
                 </Box>
                 {/* <Box lineHeight='30px'>
                 <Text>
@@ -122,9 +117,10 @@ export default function Premios() {
                     />
                   </Link>
                 </GridItem>
-                {/* <GridItem position="relative">
+                <GridItem position="relative">
                   <Flex
-                    position="absolute"
+                    // position="absolute"
+                    bgColor="#DF3F8E"
                     width="100%"
                     height="100%"
                     justifyContent="center"
@@ -132,7 +128,7 @@ export default function Premios() {
                     zIndex="2"
                   >
                     <Link
-                      href="https://a.cstmapp.com/p/923864"
+                      href="https://a.cstmapp.com/p/924180"
                       target="_blank"
                       fontWeight="bold"
                       rel="noopener noreferrer"
@@ -142,6 +138,8 @@ export default function Premios() {
                       letterSpacing="widest"
                       boxShadow="lg"
                       borderRadius="4px"
+                      mt='5'
+                      mb='5'
                       py={2}
                       px={3}
                       fontSize="15px"
@@ -149,18 +147,18 @@ export default function Premios() {
                       Participar
                     </Link>
                   </Flex>
-                  <Image
+                  {/* <Image
                     src={bkgbuttomImg}
                     alt="rompecabezas sorteo"
                     layout="responsive"
                     // objectFit="cover"
                     // objectPosition="center"
-                  />
-                </GridItem> */}
+                  /> */}
+                </GridItem>
               </Grid>
             </Box>
           </Box>
-          <Box bgColor="#58BCB9" h="auto">
+          {/* <Box bgColor="#58BCB9" h="auto">
             <Box>
               <Grid>
                 <GridItem>
@@ -208,7 +206,7 @@ export default function Premios() {
                 </GridItem>
               </Grid>
             </Box>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </Layout>
