@@ -11,10 +11,11 @@ import {
 } from "@chakra-ui/react";
 
 import regalosImg from "public/premios-photos/regalos.png";
-import lolSurpiseImg from "public/premios-photos/lol-surprise.jpeg";
+// import lolSurpiseImg from "public/premios-photos/lol-surprise.jpeg";
 // import bkgbuttomImg from "public/premios-photos/backbottom.svg";
 import TriviaImg from "public/premios-photos/trivia.png";
 import bkgtriviaImg from "public/premios-photos/backtrivia.svg";
+import lolRevealImg from "public/premios-photos/lol-reveal.png";
 
 export default function Premios() {
   return (
@@ -105,17 +106,21 @@ export default function Premios() {
           </Flex>
         </Box>
         <Box w={["100%", "100%", "70%"]}>
-          <Box bgColor="#BF0D23" h="auto" marginTop={["-70px", null, 0]}>
+          <Box bgColor="#DF3F8E" h="auto" marginTop={["-70px", null, 0]}>
             <Box pt={["100px", null, 0]}>
               <Grid>
                 <GridItem>
-                  <Image
-                    priority
-                    src={lolSurpiseImg}
-                    alt="El próximo 29 de diciembre te espera una súper LOL Suprise."
-                    placeholder="blur"
-                    layout="responsive"
-                  />
+                  <Link
+                  href="https://a.cstmapp.com/p/924180"
+                  target="_blank">
+                    <Image
+                      priority
+                      src={lolRevealImg}
+                      alt="El próximo 29 de diciembre te espera una súper LOL Suprise."
+                      placeholder="blur"
+                      layout="responsive"
+                    />
+                  </Link>
                 </GridItem>
                 {/* <GridItem position="relative">
                   <Flex
